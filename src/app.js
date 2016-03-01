@@ -5,5 +5,9 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 	$routeProvider.when("/", {
 		controller: "SellersController",
 		templateUrl: "components/sellers/index.html"
-	});
+	})
+	.when("/:seller", {
+	      templateUrl: "/src/components/seller-details/index.html",
+	      controller: "SellersDetailsController"
+	    });
 });
