@@ -1,1 +1,20 @@
-<div> Hér ætti að birtast listi af seljendum - TODO: útfæra það!</div>
+
+<div class="row">
+  <button class="btn btn-primary buttons" ng-click="" >Bæta við</button>
+  <div class="col-lg-6">
+      <div>Nafn Seljanda :</div>
+      <ul>
+        <li ng-repeat="seller in sellers">
+          <div>  {{seller.name}}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <div>Flokkur :</div>
+        <ul>
+          <li ng-repeat="seller in sellers">
+            <div> {{seller.category}}</div>
+          </li>
+        </ul>
+    </div>
+</div>
