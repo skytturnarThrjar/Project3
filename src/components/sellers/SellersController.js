@@ -10,8 +10,8 @@ function SellersController($scope, AppResource) {
 	});
 
 
-	AppResource.addSeller(seller).success(function (sellers ){
+	/*AppResource.addSeller(seller).success(function (sellers ){
 		$scope.sellers = sellers;
-	});
+	});*/
 
 });
