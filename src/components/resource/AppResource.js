@@ -99,6 +99,7 @@ function AppResource() {
 		successGetSellerProducts:   true,
 		successAddSellerProduct:    true,
 		successUpdateSellerProduct: true,
+		addedSeller: true,
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -110,7 +111,9 @@ function AppResource() {
 		},
 
 		addSeller: function addSeller(seller) {
+			mockResource.addedSeller = false;
 			if (mockResource.successAddSeller) {
+				mockResource.addedSeller = true;
 				mockSellers.push(seller);
 			}
 			return mockHttpPromise(mockResource.successAddSeller, seller);

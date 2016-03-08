@@ -21,20 +21,14 @@ function SellersController($scope, $uibModal, AppResource, $location) {
 
     modalInstance.result.then(function (selectedItem) {
 			console.log("selectedItem: ", selectedItem);
-			var sellerObj ={
-			name: selectedItem.SellerName,
-			category: selectedItem.SellerCategory,
-			imagePath:selectedItem.SellerimagePath
+			var sellerObj = {
+				name: selectedItem.SellerName,
+				category: selectedItem.SellerCategory,
+				imagePath: selectedItem.SellerimagePath
 			};
-		AppResource.addSeller(sellerObj).success(function (sellers ){
 
-		});
-    }, function () {
-			console.log("error");
+			AppResource.addSeller(sellerObj).success(function (sellers ){
+			});
     });
-	};
-
-	$scope.moveToSeller = function(id){
-		$location.path(id);
 	};
 });
