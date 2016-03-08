@@ -16,7 +16,7 @@ function SellersController($scope, $uibModal, AppResource, $location) {
 		var modalInstance = $uibModal.open({
       templateUrl: 'src/components/sellers/modal.html',
       controller: 'ModalController',
-      size: 'lg'
+      size: 'md'
     });
 
     modalInstance.result.then(function (selectedItem) {
@@ -34,7 +34,7 @@ function SellersController($scope, $uibModal, AppResource, $location) {
     });
 	};
 
-	$scope.moveToSeller = function(name){
-		$location.path(name);
+	$scope.moveToSeller = function(id){
+		$location.path(id);
 	};
 });

@@ -1,29 +1,28 @@
 <div ng-controller="SellersController">
         <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
+            <h3 class="modal-title">Add Seller</h3>
         </div>
         <div class="modal-body">
-          <div>
+          <form class="form-horizontal modal-body">
+          <div class="form-group">
             <label>Name:</label>
-            <input type="text" class="form-control" ng-model="sellerInfo.SellerName" ng-required="required"  />
+            <input type="text" class="form-control" ng-model="sellerInfo.SellerName" />
           </div>
-          <div>
+          <div class="form-group">
             <label>Category:</label>
-            <input type="text" class="form-control" ng-model="sellerInfo.SellerCategory" ng-required="required"  />
+            <input type="text" class="form-control" ng-model="sellerInfo.SellerCategory" />
           </div>
-          <div>
+          <div class="form-group">
             <label>imagePath:</label>
-            <input type="text" class="form-control" ng-model="sellerInfo.SellerimagePath" ng-required="required" />
+            <input type="text" class="form-control" ng-model="sellerInfo.SellerimagePath" />
+          </div>
+          <div class="validation-message">
+            {{validationMessage}}
           </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="submit" ng-click="ok(sellerInfo)">OK</button>
+            <button class="btn btn-primary" type="submit" ng-click="ok(sellerInfo)">Add</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
-
-    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
-    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+      </form>
 </div>
