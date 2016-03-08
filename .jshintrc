@@ -30,6 +30,7 @@
 		"afterEach": true,
 		"jasmine": true,
 		"require": true,
-		"html2canvas": true
+		"html2canvas": true,
+		"debugger": true
 	}
 }

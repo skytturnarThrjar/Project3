@@ -6,7 +6,7 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 		controller: "SellersController",
 		templateUrl: "components/sellers/index.html"
 	})
-	.when("/:seller", {
+	.when("/:id", {
 	      templateUrl: "/src/components/seller-details/index.html",
 	      controller: "SellersDetailsController"
 	    });
