@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
+angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices","angular-storage"])
 .config(function ($routeProvider) {
 	$routeProvider.when("/", {
 		controller: "SellersController",
@@ -9,5 +9,5 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 	.when("/:id", {
 	      templateUrl: "/src/components/seller-details/index.html",
 	      controller: "SellersDetailsController"
-	    });
+	});
 });
