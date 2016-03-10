@@ -1,7 +1,7 @@
 {
 	"shared" : {
-    "OK":                        "OK",
-    "Cancel":                    "Cancel",
+    "OK":                        "Í lagi",
+    "Cancel":                    "Hætta við",
 		"Messages" : {
 			"LoadingMessage":				 "Nær í gögn..."
 		}

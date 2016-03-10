@@ -1,0 +1,17 @@
+{
+	"products" : {
+		"Title":                     "Products",
+		"Name":                      "Name",
+		"Price":									   "Price",
+    "QuantityInStock":           "Quantity In Stock",
+    "QuantitySold":              "Quantity Sold",
+    "ImagePath":                 "Image Path",
+		"Messages" : {
+      "LoadFailed":            "Failed to load the list of products",
+			"SaveSucceeded":         "The product has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new product",
+			"EditSucceeded":         "The product has been edited successfully",
+			"EditFailed":            "Unfortunately we could not edit this product"
+		}
+	}
+}

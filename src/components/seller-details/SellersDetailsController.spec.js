@@ -15,12 +15,12 @@ describe("SellersDetailsController should be unit tested here", function() {
       AppResource: resource
     });
   }));
-  //
-  // it("Is able to get seller details", function() {
-  //   // var id = 1;
-  //   // scope.getSellerDetails(id);
-  //   // expect(scope.sellersDetails).toBeDefined();
-  // });
+
+  it("Is able to get seller details", function() {
+    var id = 1;
+    resource.getSellerDetails(id);
+    expect(scope.sellersDetails).toBeDefined();
+  });
 
   // it("Sellers details appears and is not empty", function() {
   //   console.log("scope.sellersDetails " + scope.sellersDetails );

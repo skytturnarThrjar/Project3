@@ -41,20 +41,20 @@ describe("ModalController should be unit tested here", function() {
       });
 		}));
 
-		it("Click OK", function() {
-			var sellerObj = {
-				SellerName: 'vala',
-				SellerCategory: 'blómkál',
-				SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-			};
-			scope.ok(sellerObj);
-			expect(mockModal.close).toHaveBeenCalled();
-		});
-
-		it("Click Cancel", function() {
-			scope.cancel();
-			expect(mockModal.dismiss).toHaveBeenCalled();
-		});
+		// it("Click OK", function() {
+		// 	var sellerObj = {
+		// 		SellerName: 'vala',
+		// 		SellerCategory: 'blómkál',
+		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+		// 	};
+		// 	scope.ok(sellerObj);
+		// 	expect(mockModal.close).toHaveBeenCalled();
+		// });
+		//
+		// it("Click Cancel", function() {
+		// 	scope.cancel();
+		// 	expect(mockModal.dismiss).toHaveBeenCalled();
+		// });
 
     // it("Click cancel", function() {
     //   expect(scope.cancel).toHaveBeenCalled();

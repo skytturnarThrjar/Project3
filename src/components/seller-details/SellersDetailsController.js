@@ -12,7 +12,6 @@ angular.module("project3App")
 
 //  $scope.sellersProducts = store.get('sellersProducts');
 
-
 }).directive('product', function() {
 return {
 	restrict: 'E',

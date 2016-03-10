@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, $uibModal, AppResource, $location, centrisNotify, SellerDlg) {
+function SellersController($scope, $uibModal, AppResource, $location, centrisNotify, SellerDlg, $translate) {
 	$scope.isLoading = true;
 	AppResource.getSellers().success(function (sellers ){
 		$scope.sellers = sellers;

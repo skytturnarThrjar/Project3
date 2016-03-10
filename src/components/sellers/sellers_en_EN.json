@@ -12,8 +12,7 @@
 			"SaveSucceeded":         "The seller has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller",
 			"EditSucceeded":         "The seller has been edited successfully",
-			"EditFailed":            "Unfortunately we could not edit this seller",
-			"LoadingMessage":				 "Loading..."
+			"EditFailed":            "Unfortunately we could not edit this seller"
 		}
 	}
 }

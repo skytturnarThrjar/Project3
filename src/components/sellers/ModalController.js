@@ -1,5 +1,5 @@
 "use strict";
-angular.module("project3App").controller("ModalController", function ModalController($scope, $uibModalInstance) {
+angular.module("project3App").controller("ModalController", function ModalController($scope, $uibModalInstance, $translate) {
   $scope.ok = function (tmp1) {
     //validation
     if(tmp1.SellerName !== undefined && tmp1.SellerCategory !== undefined && tmp1.SellerimagePath !== undefined) {

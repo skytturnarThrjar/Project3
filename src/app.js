@@ -16,5 +16,5 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "ang
 		suffix: '.json'
 	});
 
-	$translateProvider.use('is');
+	$translateProvider.use('en');
 });
