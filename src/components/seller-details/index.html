@@ -1,7 +1,8 @@
-<div class="col-lg-6">
+<div class="col-lg-6" ng-controller="SellersDetailsController">
   <h1>{{sellersDetails.name}}</h1>
   <h2>{{sellersDetails.category}}</h2>
   <img class="SellerImage" src="{{sellersDetails.imagePath}}">
+  <button type="button" class="btn btn-info btn-lg" ng-click="onAddProduct()" translate="products.Add"></button>
 </div>
 
 <products-tab></products-tab>

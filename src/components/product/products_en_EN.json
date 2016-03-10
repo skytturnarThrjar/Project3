@@ -6,6 +6,7 @@
     "QuantityInStock":           "Quantity In Stock",
     "QuantitySold":              "Quantity Sold",
     "ImagePath":                 "Image Path",
+		"Add": 											 "Add product",
 		"Messages" : {
       "LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",

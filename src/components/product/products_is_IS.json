@@ -6,12 +6,13 @@
     "QuantityInStock":           "Til á lager",
     "QuantitySold":              "Selt",
     "ImagePath":                 "Slóð á mynd",
+		"Add": 											 "Bæta við vöru",
 		"Messages" : {
-			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
-			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda",
-			"EditSucceeded":         "Seljanda hefur verið breytt",
-			"EditFailed":            "Því miður tókst ekki að breyta seljanda"
+			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
+			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru",
+			"EditSucceeded":         "Vöru hefur verið breytt",
+			"EditFailed":            "Því miður tókst ekki að breyta vöru"
 		}
 	}
 }
