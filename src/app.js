@@ -11,10 +11,10 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "ang
 	      controller: "SellersDetailsController"
 	});
 
-	// $translateProvider.useStaticFilesLoader({
-	// 	prefix: 'lang_',
-	// 	suffix: '.json'
-	// });
+	$translateProvider.useStaticFilesLoader({
+		prefix: 'lang_',
+		suffix: '.json'
+	});
 
-	// $translateProvider.use('is');
+	$translateProvider.use('is');
 });

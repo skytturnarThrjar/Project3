@@ -3,11 +3,16 @@
 		"Title":                     "Seljendur",
 		"Name":                      "Nafn",
 		"Category":									 "Flokkur",
+		"ImagePath":								 "Slóð á mynd",
 		"NameOfSellers":						 "Nafn Seljanda",
+		"Add":											 "Bæta við seljanda",
+		"Edit":											 "Breyta",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda",
+			"EditSucceeded":         "Seljanda hefur verið breytt",
+			"EditFailed":            "Því miður tókst ekki að breyta seljanda",
 			"LoadingMessage":				 "Nær í gögn..."
 		}
 	}

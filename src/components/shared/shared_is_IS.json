@@ -1,0 +1,9 @@
+{
+	"shared" : {
+    "OK":                        "OK",
+    "Cancel":                    "Cancel",
+		"Messages" : {
+			"LoadingMessage":				 "Nær í gögn..."
+		}
+	}
+}
