@@ -27,6 +27,7 @@ module.exports = function(config) {
       'src/vendor/angular-toastr/dist/angular-toastr.js',
       'src/vendor/angular-translate/angular-translate.js',
       'src/vendor/angular-mocks/angular-mocks.js',
+      'src/vendor/a0-angular-storage/dist/angular-storage.js',//< HERE
       'src/shared/app.js',
       'src/shared/**/*.js',
       'src/app.js',
@@ -36,7 +37,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      
+
     ],
 
 
