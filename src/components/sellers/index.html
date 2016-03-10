@@ -1,13 +1,16 @@
-
+<div ng-show="isLoading">
+  <loading-message></loading-message>
+</div>
 <div class="row">
   <h1>Söluaðilar</h1>
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" ng-click="addSellerfun()">Add Seller</button>
+  <button type="button" class="btn btn-info btn-lg" ng-click="onAddSeller()">Add Seller</button>
   <div class="col-lg-6">
-      <h2>Nafn Seljanda :       Flokkur: </h2>
+      <h2>Nafn Seljanda:       Flokkur: </h2>
       <ul>
         <li ng-repeat="seller in sellers">
-          <a ng-href="#/{{seller.id}}">  {{seller.name}} {{seller.category}}   </a>
+          <a ng-href="#/{{seller.id}}"> {{seller.name}} {{seller.category}} </a>
+          <button type="button" class="btn btn-info btn-lg" ng-click="onEditSeller(seller)">Edit</button>
         </li>
       </ul>
     </div>

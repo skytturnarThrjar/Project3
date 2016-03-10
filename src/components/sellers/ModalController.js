@@ -1,4 +1,3 @@
-//mögulega bæta við []
 "use strict";
 angular.module("project3App").controller("ModalController", function ModalController($scope, $uibModalInstance) {
   $scope.ok = function (tmp1) {

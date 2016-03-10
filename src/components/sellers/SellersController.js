@@ -1,34 +1,56 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, $uibModal, AppResource, $location) {
-	// TODO: load data from AppResource! Also, add other methods, such as to
-	// add/update sellers etc.
+function SellersController($scope, $uibModal, AppResource, $location, centrisNotify, SellerDlg) {
+	$scope.isLoading = true;
 	AppResource.getSellers().success(function (sellers ){
 		$scope.sellers = sellers;
-		console.log($scope.sellers);
+		$scope.isLoading = false;
+	}).error(function() {
+		$scope.isLoading = false;
+		centrisNotify.error('sellers.Messages.LoadFailed');
 	});
 
 	$scope.sellerInfo = {};
 
-	$scope.addSellerfun = function() {
+	// $scope.addSellerfun = function() {
+	//
+	// 	var modalInstance = $uibModal.open({
+  //     templateUrl: 'src/components/sellers/modal.html',
+  //     controller: 'ModalController',
+  //     size: 'md'
+  //   });
+	//
+  //   modalInstance.result.then(function (selectedItem) {
+	// 		var sellerObj = {
+	// 			name: selectedItem.SellerName,
+	// 			category: selectedItem.SellerCategory,
+	// 			imagePath: selectedItem.SellerimagePath
+	// 		};
+	// 		AppResource.addSeller(sellerObj).success(function (sellers ){
+	// 			centrisNotify.success('sellers.Messages.SaveSucceeded');
+	// 		}).error(function() {
+	// 			centrisNotify.error('sellers.Messages.SaveFailed');
+	// 		});
+  //   });
+	// };
 
-		var modalInstance = $uibModal.open({
-      templateUrl: 'src/components/sellers/modal.html',
-      controller: 'ModalController',
-      size: 'md'
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-			console.log("selectedItem: ", selectedItem);
-			var sellerObj = {
-				name: selectedItem.SellerName,
-				category: selectedItem.SellerCategory,
-				imagePath: selectedItem.SellerimagePath
-			};
-
-			AppResource.addSeller(sellerObj).success(function (sellers ){
+	$scope.onAddSeller = function onAddSeller() {
+			SellerDlg.show().then(function(seller) {
+			AppResource.addSeller(seller).success(function(seller) {
+			}).error(function() {
+					//centrisNotify error("sellers.Messages.SaveFaile");
 			});
-    });
+		});
 	};
+
+	$scope.onEditSeller = function onEditSeller(s) {
+		SellerDlg.show().then(function(seller) {
+			AppResource.updateSeller(s.id, seller).success(function (seller){
+			}).error(function() {
+					//centrisNotify error("sellers.Messages.SaveFaile");
+			});
+		});
+	};
+
 });

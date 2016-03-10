@@ -24,6 +24,7 @@
     "lodash": "~4.5.1"
   },
   "devDependencies": {
-    "a0-angular-storage": "^0.0.13"
+    "a0-angular-storage": "^0.0.13",
+    "angular-translate-loader-static-files": "^2.10.0"
   }
 }
