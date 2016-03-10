@@ -3,7 +3,7 @@
     <h2>Products</h2>
 
     <div ng-controller="TopProductTabController">
-      <div ng-repeat="product in sellersProducts ">
+      <div ng-repeat="product in sellersProducts | orderBy : product.quantitySold ">
         <products></Products>
     </div>
   </div>

@@ -1,17 +1,15 @@
 "use strict";
 
 angular.module("project3App")
-  .controller("TopProductTabController", function TopProductTabController($scope, $uibModal, AppResource, $routeParams, store) {
+  .controller("ProductTabController", function ProductTabController($scope, $uibModal, AppResource, $routeParams, store) {
 
     $scope.Sellerid = $routeParams.id;
 
     AppResource.getSellerProducts(parseInt($scope.Sellerid)).success(function(products) {
       $scope.sellersProducts = products;
       store.set('sellersProducts', $scope.sellersProducts);
-      console.log(products);
     });
-
-  }).directive('products', function() {
+  }).directive('product', function() {
     return {
       restrict: 'E',
       templateUrl: '/src/components/product/Product.html'
