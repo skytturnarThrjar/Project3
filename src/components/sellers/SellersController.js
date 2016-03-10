@@ -3,7 +3,7 @@
 angular.module("project3App").controller("SellersController",
 function SellersController($scope, $uibModal, AppResource, $location, centrisNotify, SellerDlg, $translate) {
 	$scope.isLoading = true;
-	AppResource.getSellers().success(function (sellers ){
+	AppResource.getSellers().success(function (sellers){
 		$scope.sellers = sellers;
 		$scope.isLoading = false;
 	}).error(function() {
@@ -24,13 +24,14 @@ function SellersController($scope, $uibModal, AppResource, $location, centrisNot
 		});
 	};
 
-	$scope.onEditSeller = function onEditSeller(s) {
-		SellerDlg.show(s).then(function(seller) {
-			AppResource.updateSeller(s.id, seller).success(function (seller){
-					centrisNotify.success('sellers.Messages.EditSucceeded');
-			}).error(function() {
-					centrisNotify.success('sellers.Messages.EditFailed');
-			});
-		});
-	};
+	// $scope.onEditSeller = function onEditSeller(s) {
+	// 	SellerDlg.show(s).then(function(seller) {
+	// 		AppResource.updateSeller(s.id, seller).success(function (seller){
+	// 				centrisNotify.success('sellers.Messages.EditSucceeded');
+	// 		}).error(function() {
+	// 				centrisNotify.success('sellers.Messages.EditFailed');
+	// 		});
+	// 	});
+	// };
+
 });

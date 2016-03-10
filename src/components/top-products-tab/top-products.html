@@ -1,10 +1,10 @@
-<h2>Products</h2>
+<h2 translate="products.Title"></h2>
 <div class="col-lg-6">
-    <h2>Products</h2>
-
-    <div ng-controller="TopProductTabController">
-      <div ng-repeat="product in sellersProducts | orderBy : product.quantitySold ">
-        <products></Products>
+  <h2 translate="products.Title"></h2>
+  <div ng-controller="TopProductTabController">
+    <div ng-repeat="product in sellersProducts | orderBy:'-quantitySold' | limitTo:10">
+      <products>
+      </Products>
     </div>
   </div>
 </div>

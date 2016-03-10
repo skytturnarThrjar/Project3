@@ -1,26 +1,23 @@
 "use strict";
 
 describe("SellersController should be unit tested here", function() {
-	// TODO: add beforeEach/describe/it/etc. functions as appropriate!
 	  beforeEach(module("project3App"));
 		var SellersController;
 		var scope;
 		var resource;
-		var mockModal = {
-			mockSeller: {},
+
+		var mockFactory = {
+			seller: {},
 			isSuccess: true,
-			open: function() {
-				return { result: {
+			show: function(seller) {
+				return {
 					then: function(cb) {
-						if(mockModal.isSuccess) {
-							cb(mockModal.mockSeller);
-						}
+						if(mockFactory.isSuccess) {
+							cb(mockFactory.seller);
 					}
 				}};
 			}
 		};
-
-		var dialog;
 
 		beforeEach(inject(function($rootScope, $controller, AppResource) {
 			scope = $rootScope.$new();
@@ -29,8 +26,7 @@ describe("SellersController should be unit tested here", function() {
 			SellersController = $controller('SellersController', {
 				$scope: scope,
 				AppResource: resource,
-				$uibModal: mockModal,
-				SellerDlg: dialog
+				SellerDlg: mockFactory
 			});
 		}));
 
@@ -38,17 +34,34 @@ describe("SellersController should be unit tested here", function() {
 			expect(scope.sellers).toBeDefined();
 		});
 
-		// it("Possible to add seller", function() {
+		it("List of sellers is empty", function() {
+			resource.successLoadSellers = false;
+			//hvað?? skilar alltaf mockSellers
+		});
+
+		it("Possible to add seller", function() {
+			var sellerObj = {
+				SellerName: 'vala',
+				SellerCategory: 'blómkál',
+				SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+			};
+			mockFactory.seller = sellerObj;
+			scope.onAddSeller();
+			expect(resource.addSeller).toHaveBeenCalled();
+		});
+
+		// it("Possible to edit seller", function() {
 		// 	var sellerObj = {
 		// 		SellerName: 'vala',
 		// 		SellerCategory: 'blómkál',
 		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
 		// 	};
-		// 	mockModal.mockSeller = sellerObj;
-		// 	scope.onAddSeller();
-		// 	expect(resource.addSeller).toHaveBeenCalled();
+		// 	mockFactory.seller = sellerObj;
+		// 	scope.onEditSeller(sellerObj);
+		// 	expect(resource.updateSeller).toHaveBeenCalled();
 		// });
-		//
+
+		//Hvaaaaaaððð??
 		// it("Not possible to add seller", function() {
 		// 	resource.successAddSeller = false;
 		// 	var sellerObj = {
@@ -56,20 +69,20 @@ describe("SellersController should be unit tested here", function() {
 		// 		SellerCategory: 'blómkál',
 		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
 		// 	};
-		// 	mockModal.mockSeller = sellerObj;
+		// 	mockFactory.mockSeller = sellerObj;
 		// 	scope.onAddSeller();
 		// 	expect(resource.addSeller).not.toHaveBeenCalled();
 		// });
-		//
-		// it("Modal is not successful", function() {
-		// 	mockModal.isSuccess = false;
-		// 	var sellerObj = {
-		// 		SellerName: 'vala',
-		// 		SellerCategory: 'blómkál',
-		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-		// 	};
-		// 	mockModal.mockSeller = sellerObj;
-		// 	scope.onAddSeller();
-		// 	expect(resource.addSeller).not.toHaveBeenCalled();
-		// });
+
+		it("Modal is not successful", function() {
+			mockFactory.isSuccess = false;
+			var sellerObj = {
+				SellerName: 'vala',
+				SellerCategory: 'blómkál',
+				SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+			};
+			mockFactory.mockSeller = sellerObj;
+			scope.onAddSeller();
+			expect(resource.addSeller).not.toHaveBeenCalled();
+		});
 });
