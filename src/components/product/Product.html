@@ -1,7 +1,8 @@
-<div>
+<div ng-controller="ProductController">
         <img class="ProductImage" src= "{{product.imagePath}}">
         <h2>{{product.name}}</h2>
         <h3>{{product.price}} kr</h3>
         <!-- <h3>{{product.quantityInStock}}</h3> -->
         <h3>{{product.quantitySold}}</h3>
+        <button type="button" class="btn btn-info btn-lg" ng-click="onEditProduct(product)" translate="sellers.Edit"></button>
 </div>
