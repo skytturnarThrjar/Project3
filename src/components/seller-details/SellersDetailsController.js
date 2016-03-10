@@ -5,7 +5,7 @@ angular.module("project3App")
 
   $scope.Sellerid = $routeParams.id ;
 
-  AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function (sellers ){
+  AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function (sellers){
     $scope.sellersDetails = sellers;
     console.log(sellers);
   });

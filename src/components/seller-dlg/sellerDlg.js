@@ -16,3 +16,23 @@ function SellerDlg($uibModal) {
       }
     };
 });
+
+		// var modalInstance = $uibModal.open({
+    //   templateUrl: 'src/components/sellers/modal.html',
+    //   controller: 'ModalController',
+    //   size: 'md'
+    // });
+    //
+    // modalInstance.result.then(function (selectedItem) {
+		// 	console.log("selectedItem: ", selectedItem);
+		// 	var sellerObj = {
+		// 		name: selectedItem.SellerName,
+		// 		category: selectedItem.SellerCategory,
+		// 		imagePath: selectedItem.SellerimagePath
+    //
+		// 	};
+    //
+		// 	AppResource.addSeller(sellerObj).success(function (sellers ){
+		// 	});
+    // });
+	  // };

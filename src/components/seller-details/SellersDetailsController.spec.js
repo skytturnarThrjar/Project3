@@ -1,7 +1,6 @@
 "use strict";
 
 describe("SellersDetailsController should be unit tested here", function() {
-	// TODO: add beforeEach/describe/it/etc. functions as appropriate!
   beforeEach(module("project3App"));
   var SellersDetailsController;
   var scope;
@@ -10,15 +9,19 @@ describe("SellersDetailsController should be unit tested here", function() {
   beforeEach(inject(function($rootScope, $controller, AppResource) {
     scope = $rootScope.$new();
     resource = AppResource;
+    spyOn(resource, 'getSellerDetails').and.callThrough();
     SellersDetailsController = $controller('SellersDetailsController', {
       $scope: scope,
-      AppResource: resource
+      AppResource: resource,
+      $routeParams: {id: '1'}
     });
   }));
 
   it("Is able to get seller details", function() {
-    var id = 1;
-    resource.getSellerDetails(id);
+    expect(resource.getSellerDetails).toHaveBeenCalled();
+  });
+
+  it("Is able to get seller details", function() {
     expect(scope.sellersDetails).toBeDefined();
   });
 
@@ -26,5 +29,4 @@ describe("SellersDetailsController should be unit tested here", function() {
   //   console.log("scope.sellersDetails " + scope.sellersDetails );
   //   expect(scope.sellersDetails).toBeDefined();
   // });
-
 });
