@@ -1,14 +1,8 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-function SellerDlgController($scope) {
-  //$scope.seller = seller;
-  //console.log(seller);
-  $scope.seller = {
-      name: "",
-      category: "",
-      imagePath: ""
-  };
+function SellerDlgController($scope, seller) {
+  $scope.seller = seller;
 
   $scope.onOk = function onOK(seller) {
     //validation

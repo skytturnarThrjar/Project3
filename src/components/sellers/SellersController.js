@@ -36,7 +36,8 @@ function SellersController($scope, $uibModal, AppResource, $location, centrisNot
 	// };
 
 	$scope.onAddSeller = function onAddSeller() {
-			SellerDlg.show().then(function(seller) {
+			var s = {};
+			SellerDlg.show(s).then(function(seller) {
 			AppResource.addSeller(seller).success(function(seller) {
 			}).error(function() {
 					//centrisNotify error("sellers.Messages.SaveFaile");
@@ -45,7 +46,8 @@ function SellersController($scope, $uibModal, AppResource, $location, centrisNot
 	};
 
 	$scope.onEditSeller = function onEditSeller(s) {
-		SellerDlg.show().then(function(seller) {
+		console.log(s);
+		SellerDlg.show(s).then(function(seller) {
 			AppResource.updateSeller(s.id, seller).success(function (seller){
 			}).error(function() {
 					//centrisNotify error("sellers.Messages.SaveFaile");
