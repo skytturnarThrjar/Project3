@@ -10,16 +10,16 @@ angular.module("project3App")
     console.log(sellers);
   });
 
-//  $scope.sellersProducts = store.get('sellersProducts');
+  $scope.sellersProducts = store.get('sellersProducts');
 
-}).directive('product', function() {
-return {
-	restrict: 'E',
-	templateUrl: '/src/components/product/Product.html'
-};
 }).directive('topProducts', function() {
 return {
 	restrict: 'E',
 	templateUrl: '/src/components/top-products-tab/top-products.html'
+};
+}).directive('productsTab', function() {
+return {
+	restrict: 'E',
+	templateUrl: '/src/components/products-tab/index.html'
 };
 });
