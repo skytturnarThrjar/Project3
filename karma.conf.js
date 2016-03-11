@@ -33,7 +33,8 @@ module.exports = function(config) {
       'src/shared/app.js',
       'src/shared/**/*.js',
       'src/app.js',
-      'src/components/**/*.js'
+      'src/components/**/*.js',
+      'src/vendor/lodash/dist/lodash.min.js'
     ],
 
 

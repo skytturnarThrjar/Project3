@@ -62,28 +62,33 @@ describe("SellersController should be unit tested here", function() {
 					expect(beforeLength).toEqual(afterLength);
 				});
 
-				//virkar ekki :( -> _ is undefined
-				// it("Possible to edit seller", function() {
-				// 	var sellerObj = {
-				// 		SellerName: 'vala',
-				// 		SellerCategory: 'blómkál',
-				// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-				// 	};
-				// 	mockFactory.seller = sellerObj;
-				// 	//scope.onEditSeller(sellerObj);
-				// 	//expect(resource.updateSeller).toHaveBeenCalled();
-				// });
-				//
-				// it("Not possible to edit seller", function() {
-				// 	var sellerObj = {
-				// 		SellerName: 'vala',
-				// 		SellerCategory: 'blómkál',
-				// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-				// 	};
-				// 	mockFactory.seller = sellerObj;
-				// 	//scope.onEditSeller(sellerObj);
-				// 	//expect(resource.updateSeller).toHaveBeenCalled();
-				// });
+				// virkar ekki :( -> _ is undefined
+				it("Possible to edit seller", function() {
+					var seller = {
+						id: '1',
+						name: 'vala',
+						category: 'blómkál',
+						imagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+					};
+					mockFactory.seller = seller;
+					scope.onEditSeller(seller);
+					//expect(resource.updateSeller).toHaveBeenCalled();
+					expect(resource.updatedSeller).toBe(true);
+				});
+
+				it("Not possible to edit seller", function() {
+					resource.successUpdateSeller = false;
+					var seller = {
+						id: '1',
+						name: 'vala',
+						category: 'blómkál',
+						imagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+					};
+					mockFactory.seller = seller;
+					scope.onEditSeller(seller);
+					//expect(resource.updateSeller).not.toHaveBeenCalled();
+					expect(resource.updatedSeller).toBe(false);
+				});
 
 				it("Modal is not successful", function() {
 					mockFactory.isSuccess = false;
@@ -126,17 +131,4 @@ describe("SellersController should be unit tested here", function() {
 		// 		SellerDlg: mockFactory
 		// 	});
 		// }));
-
-
-		//virkar ekki :( -> _ is undefined
-		// it("Possible to edit seller", function() {
-		// 	var sellerObj = {
-		// 		SellerName: 'vala',
-		// 		SellerCategory: 'blómkál',
-		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-		// 	};
-		// 	mockFactory.seller = sellerObj;
-		// 	scope.onEditSeller(sellerObj);
-		// 	expect(resource.updateSeller).toHaveBeenCalled();
-		// });
 });

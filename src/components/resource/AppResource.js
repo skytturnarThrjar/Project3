@@ -99,6 +99,8 @@ function AppResource() {
 		successGetSellerProducts:   true,
 		successAddSellerProduct:    true,
 		successUpdateSellerProduct: true,
+		updatedSeller:							false,
+		updatedProduct: 						false,
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -119,12 +121,14 @@ function AppResource() {
 		},
 
 		updateSeller: function(id, seller) {
+			mockResource.updatedSeller = false;
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
 				if (current !== null) {
 					current.name      = seller.name;
 					current.category  = seller.category;
 					current.imagePath = seller.imagePath;
+					mockResource.updatedSeller = true;
 				}
 			}
 			return mockHttpPromise(mockResource.successUpdateSeller, seller);
@@ -176,6 +180,7 @@ function AppResource() {
 		},
 
 		updateProduct: function(id, product) {
+			mockResource.updatedProduct = false;
 			if (mockResource.successUpdateSellerProduct) {
 				var current = _.find(mockProducts, function(o){ return o.id === id;});
 				if (current !== null) {
@@ -184,6 +189,7 @@ function AppResource() {
 					current.quantitySold = product.quantitySold;
 					current.quantityInStock = product.quantityInStock;
 					current.imagePath = product.path;
+					mockResource.updatedProduct = true;
 				}
 			}
 			return mockHttpPromise(mockResource.successUpdateSellerProduct, product);
