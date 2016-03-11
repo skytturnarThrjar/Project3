@@ -2,6 +2,8 @@
 	"shared" : {
     "OK":                        "OK",
     "Cancel":                    "Cancel",
+		"EN":												 "English",
+		"ISL": 											 "Icelandic",							
 		"Messages" : {
 			"LoadingMessage":				 "Loading..."
 		}
