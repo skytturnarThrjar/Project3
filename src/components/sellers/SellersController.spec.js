@@ -19,37 +19,114 @@ describe("SellersController should be unit tested here", function() {
 			}
 		};
 
-		beforeEach(inject(function($rootScope, $controller, AppResource) {
-			scope = $rootScope.$new();
-			resource = AppResource;
-			spyOn(resource, 'addSeller').and.callThrough();
-			SellersController = $controller('SellersController', {
-				$scope: scope,
-				AppResource: resource,
-				SellerDlg: mockFactory
-			});
-		}));
+		describe("when resource succeeds in loading a list of sellers", function(){
+				// Hér kæmu sérstök beforeEach, þar á meðal sem býr til controller
+				beforeEach(inject(function($rootScope, $controller, AppResource) {
+					scope = $rootScope.$new();
+					resource = AppResource;
+					spyOn(resource, 'addSeller').and.callThrough();
+					spyOn(resource, 'updateSeller').and.callThrough();
+					SellersController = $controller('SellersController', {
+						$scope: scope,
+						AppResource: resource,
+						SellerDlg: mockFactory
+					});
+				}));
 
-		it("List of sellers appears and is not empty", function() {
-			expect(scope.sellers).toBeDefined();
+				it("List of sellers appears and is not empty", function() {
+					expect(scope.sellers).toBeDefined();
+				});
+
+				it("Possible to add seller", function() {
+					var sellerObj = {
+						SellerName: 'vala',
+						SellerCategory: 'blómkál',
+						SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+					};
+					mockFactory.seller = sellerObj;
+					scope.onAddSeller();
+					expect(resource.addSeller).toHaveBeenCalled();
+				});
+
+				it("Not possible to add seller", function() {
+					resource.successAddSeller = false;
+					var beforeLength = scope.sellers.length;
+					var sellerObj = {
+						SellerName: 'vala',
+						SellerCategory: 'blómkál',
+						SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+					};
+					mockFactory.mockSeller = sellerObj;
+					scope.onAddSeller();
+					var afterLength = scope.sellers.length;
+					expect(beforeLength).toEqual(afterLength);
+				});
+
+				//virkar ekki :( -> _ is undefined
+				// it("Possible to edit seller", function() {
+				// 	var sellerObj = {
+				// 		SellerName: 'vala',
+				// 		SellerCategory: 'blómkál',
+				// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+				// 	};
+				// 	mockFactory.seller = sellerObj;
+				// 	//scope.onEditSeller(sellerObj);
+				// 	//expect(resource.updateSeller).toHaveBeenCalled();
+				// });
+				//
+				// it("Not possible to edit seller", function() {
+				// 	var sellerObj = {
+				// 		SellerName: 'vala',
+				// 		SellerCategory: 'blómkál',
+				// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+				// 	};
+				// 	mockFactory.seller = sellerObj;
+				// 	//scope.onEditSeller(sellerObj);
+				// 	//expect(resource.updateSeller).toHaveBeenCalled();
+				// });
+
+				it("Modal is not successful", function() {
+					mockFactory.isSuccess = false;
+					var sellerObj = {
+						SellerName: 'vala',
+						SellerCategory: 'blómkál',
+						SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
+					};
+					mockFactory.mockSeller = sellerObj;
+					scope.onAddSeller();
+					expect(resource.addSeller).not.toHaveBeenCalled();
+				});
 		});
 
-		//resource virkar ekki
-		it("List of sellers is empty", function() {
-			resource.successLoadSellers = false;
-			expect(scope.sellers).toBeUndefined();
+		describe("when resource fails loading a list of sellers", function(){
+				beforeEach(inject(function($rootScope, $controller, AppResource) {
+					scope = $rootScope.$new();
+					resource = AppResource;
+					resource.successLoadSellers = false;
+					spyOn(resource, 'addSeller').and.callThrough();
+					SellersController = $controller('SellersController', {
+						$scope: scope,
+						AppResource: resource,
+						SellerDlg: mockFactory
+					});
+				}));
+
+				it("List of sellers is empty", function() {
+					expect(scope.sellers).toBeUndefined();
+				});
 		});
 
-		it("Possible to add seller", function() {
-			var sellerObj = {
-				SellerName: 'vala',
-				SellerCategory: 'blómkál',
-				SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-			};
-			mockFactory.seller = sellerObj;
-			scope.onAddSeller();
-			expect(resource.addSeller).toHaveBeenCalled();
-		});
+		// beforeEach(inject(function($rootScope, $controller, AppResource) {
+		// 	scope = $rootScope.$new();
+		// 	resource = AppResource;
+		// 	spyOn(resource, 'addSeller').and.callThrough();
+		// 	SellersController = $controller('SellersController', {
+		// 		$scope: scope,
+		// 		AppResource: resource,
+		// 		SellerDlg: mockFactory
+		// 	});
+		// }));
+
 
 		//virkar ekki :( -> _ is undefined
 		// it("Possible to edit seller", function() {
@@ -62,29 +139,4 @@ describe("SellersController should be unit tested here", function() {
 		// 	scope.onEditSeller(sellerObj);
 		// 	expect(resource.updateSeller).toHaveBeenCalled();
 		// });
-
-		//resource virkar ekki
-		// it("Not possible to add seller", function() {
-		// 	resource.successAddSeller = false;
-		// 	var sellerObj = {
-		// 		SellerName: 'vala',
-		// 		SellerCategory: 'blómkál',
-		// 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-		// 	};
-		// 	mockFactory.mockSeller = sellerObj;
-		// 	scope.onAddSeller();
-		// 	expect(resource.addSeller).not.toHaveBeenCalled();
-		// });
-
-		it("Modal is not successful", function() {
-			mockFactory.isSuccess = false;
-			var sellerObj = {
-				SellerName: 'vala',
-				SellerCategory: 'blómkál',
-				SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-			};
-			mockFactory.mockSeller = sellerObj;
-			scope.onAddSeller();
-			expect(resource.addSeller).not.toHaveBeenCalled();
-		});
 });
