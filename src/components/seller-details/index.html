@@ -1,9 +1,19 @@
-<div class="col-lg-6" ng-controller="SellersDetailsController">
-  <h1>{{sellersDetails.name}}</h1>
-  <h2>{{sellersDetails.category}}</h2>
-  <img class="SellerImage" src="{{sellersDetails.imagePath}}">
-  <button type="button" class="btn btn-info btn-lg" ng-click="onAddProduct()" translate="products.Add"></button>
+<div  ng-controller="SellersDetailsController" class="row">
+  <div class="col-lg-2">
+    <img class="SellerImage" src="{{sellersDetails.imagePath }}">
 </div>
-
-<products-tab></products-tab>
-<top-products></top-products>
+<div class="col-lg-10">
+    <h1>{{sellersDetails.name}}  </h1>
+    <h2>{{sellersDetails.category}}</h2>
+  </div>
+</div>
+<div class="row tabs">
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="Products">
+      <products-tab></products-tab>
+    </uib-tab>
+    <uib-tab index="1" heading="Top 10 products">
+      <top-products></top-products>
+    </uib-tab>
+  </uib-tabset>
+</div>
