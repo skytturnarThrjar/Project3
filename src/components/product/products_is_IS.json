@@ -7,6 +7,7 @@
     "QuantitySold":              "Selt",
     "ImagePath":                 "Slóð á mynd",
 		"Add": 											 "Bæta við vöru",
+		"Edit":											 "Breyta vöru",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",

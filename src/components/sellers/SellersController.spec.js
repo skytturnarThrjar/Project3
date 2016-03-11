@@ -34,9 +34,10 @@ describe("SellersController should be unit tested here", function() {
 			expect(scope.sellers).toBeDefined();
 		});
 
+		//resource virkar ekki
 		it("List of sellers is empty", function() {
 			resource.successLoadSellers = false;
-			//hvað?? skilar alltaf mockSellers
+			expect(scope.sellers).toBeUndefined();
 		});
 
 		it("Possible to add seller", function() {
@@ -50,6 +51,7 @@ describe("SellersController should be unit tested here", function() {
 			expect(resource.addSeller).toHaveBeenCalled();
 		});
 
+		//virkar ekki :( -> _ is undefined
 		// it("Possible to edit seller", function() {
 		// 	var sellerObj = {
 		// 		SellerName: 'vala',
@@ -61,7 +63,7 @@ describe("SellersController should be unit tested here", function() {
 		// 	expect(resource.updateSeller).toHaveBeenCalled();
 		// });
 
-		//Hvaaaaaaððð??
+		//resource virkar ekki
 		// it("Not possible to add seller", function() {
 		// 	resource.successAddSeller = false;
 		// 	var sellerObj = {

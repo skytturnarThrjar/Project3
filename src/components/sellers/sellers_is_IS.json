@@ -9,6 +9,7 @@
 		"Edit":											 "Breyta",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
+			"LoadDetailsFailed":		 "Ekki tókst að sækja upplýsingar um seljanda",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda",
 			"EditSucceeded":         "Seljanda hefur verið breytt",

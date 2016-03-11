@@ -7,6 +7,8 @@ angular.module("project3App")
 
   AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function(sellers){
     $scope.sellersDetails = sellers;
+  }).error(function() {
+    centrisNotify.error('sellers.Messages.LoadDetailsFailed');
   });
 
   $scope.sellersProducts = store.get('sellersProducts');
