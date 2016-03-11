@@ -22,37 +22,40 @@ describe("ProductController should be unit tested here", function() {
 		beforeEach(inject(function($rootScope, $controller, AppResource) {
 			scope = $rootScope.$new();
 			resource = AppResource;
-			spyOn(resource, 'addSeller').and.callThrough();
 			ProductController = $controller('ProductController', {
 				$scope: scope,
 				AppResource: resource,
-				SellerDlg: mockFactory
+				ProductDlg: mockFactory
 			});
 		}));
 
-    // it("Possible to edit product", function() {
-    // 	var product = {
-    //     id: '1',
-    //     name: "vala",
-    //     price: 1002,
-    //     quantitySold: 20,
-    //     quantityInStock: 400,
-    //     imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
-    // 	};
-    // 	mockFactory.seller = product;
-    // 	scope.onEditProduct(product);
-    // 	expect(resource.updatedProduct).toBe(true);
-    // });
+    it("Possible to edit product", function() {
+      var productObj = {
+        id: '1',
+        productName: "vala",
+        price: 1002,
+        quantitySold: 20,
+        quantityInStock: 400,
+        imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
+      };
+      mockFactory.product = productObj;
+      scope.onEditProduct(productObj);
+      //expect(resource.updateSeller).toHaveBeenCalled();
+      expect(resource.updatedProduct).toBe(true);
+    });
 
-    // it("Not possible to edit seller", function() {
-    // 	var sellerObj = {
-    // 		SellerName: 'vala',
-    // 		SellerCategory: 'blómkál',
-    // 		SellerimagePath: 'http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg'
-    // 	};
-    // 	mockFactory.seller = sellerObj;
-    // 	//scope.onEditSeller(sellerObj);
-    // 	//expect(resource.updateSeller).toHaveBeenCalled();
-    // 	expect(resource.updatedProduct).toBe(false);
-    // });
+    it("Not possible to edit product", function() {
+      resource.successUpdateSellerProduct = false;
+      var productObj = {
+        id: '1',
+        productName: "vala",
+        price: 1002,
+        quantitySold: 20,
+        quantityInStock: 400,
+        imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
+      };
+      mockFactory.product = productObj;
+      scope.onEditProduct(productObj);
+      expect(resource.updatedProduct).toBe(false);
+    });
 });

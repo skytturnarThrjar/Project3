@@ -101,6 +101,7 @@ function AppResource() {
 		successUpdateSellerProduct: true,
 		updatedSeller:							false,
 		updatedProduct: 						false,
+		addedProduct:								false,
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -162,6 +163,7 @@ function AppResource() {
 		},
 
 		addSellerProduct: function addSellerProduct(id, product) {
+			mockResource.addedProduct = false;
 			var success = false;
 			if (mockResource.successAddSellerProduct) {
 				var newID = mockProducts.length + 1;
@@ -169,6 +171,7 @@ function AppResource() {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
 				if (seller) {
 					success = true;
+					mockResource.addedProduct = true;
 					mockProducts.push({
 						id: seller.id,
 						product: product
