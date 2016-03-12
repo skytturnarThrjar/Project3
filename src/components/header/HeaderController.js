@@ -6,8 +6,8 @@ function HeaderController($scope, $translate, $rootScope) {
         $translate.use(langKey);
       };
 
-    // $rootScope.$on('$translateChangeSuccess', function(event, data) {
-    //   var language = data.language;
-    //   $rootScope.lang = language;
-    // });
+    $rootScope.$on('$translateChangeSuccess', function(event, data) {
+      var language = data.language;
+      $rootScope.lang = language;
+    });
 }]);
