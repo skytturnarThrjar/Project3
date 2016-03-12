@@ -1,4 +1,8 @@
 <div ng-controller="HeaderController" class="navbar navbar-default navbar-static-top">
-  <button ng-show="lang == 'en'" ng-click="changeLanguage('is')" translate="shared.ISL"></button>
-  <button ng-show="lang == 'is'" ng-click="changeLanguage('en')" translate="shared.EN"></button>
+  <div class="title">
+      <h3 >Wepo boutique</h3>
+  </div>
+
+    <img class="flags" ng-show="lang == 'en'" ng-click="changeLanguage('is')" translate="shared.ISL" src="http://www.visindavefur.is/myndir/islenski_faninn_040810.JPG" alt="Description"/>
+    <img class="flags" ng-show="lang == 'is'" ng-click="changeLanguage('en')" translate="shared.EN" src="http://vignette1.wikia.nocookie.net/mortalengines/images/b/b6/English_flag.png/revision/latest?cb=20100614220751" alt="Description"/>
 </div>

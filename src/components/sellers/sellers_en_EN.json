@@ -1,6 +1,6 @@
 {
 	"sellers" : {
-		"Title":                     "Sellers List",
+		"Title":                     "Sellers",
 		"Name":                      "Name",
 		"Category":									 "Category",
 		"ImagePath":								 "Image path",

@@ -1,21 +1,31 @@
-<div ng-show="isLoading">
-  <loading-message></loading-message>
-</div>
-<div class="row">
-  <h1 translate="sellers.Title"></h1>
-  <button type="button" class="btn btn-info btn-lg" ng-click="onAddSeller()" translate="sellers.Add"></button>
-  <div class="col-lg-6">
-      <h2>
-        <span translate="sellers.NameOfSellers" />
-        <span translate="sellers.Category" />
-      </h2>
-      <ul>
-        <li ng-repeat="seller in sellers">
-          <a ng-href="#/{{seller.id}}"> {{seller.name}} {{seller.category}} </a>
-          <button type="button" class="btn btn-info btn-lg" ng-click="onEditSeller(seller)" translate="sellers.Edit"></button>
-        </li>
-      </ul>
+<div class="Sellers">
+
+
+  <div ng-show="isLoading">
+    <loading-message></loading-message>
+  </div>
+  <div class="row">
+    <h1 translate="sellers.Title"></h1>
+    <button type="button" class="btn btn-info btn-lg" ng-click="onAddSeller()" translate="sellers.Add"></button>
+    <div class="col-lg-6">
+
+      <table >
+        <tr>
+          <th class="nameOfSellers"> <span translate="sellers.NameOfSellers" /></th>
+          <th class="category"> <span translate="sellers.Category" />
+          </th>
+        </tr>
+        <tr ng-repeat="seller in sellers | orderBy:predicate">
+          <td  data-columnName="nameOfSellers" class="nameOfSellers"> <a ng-href="#/{{seller.id}}"> {{seller.name}}  </a></td>
+          <td data-columnName="Category"class="category">{{seller.category}}</td>
+          <td>
+            <button type="button" class="btn btn-info btn-sm" ng-click="onEditSeller(seller)" translate="sellers.Edit"></button>
+          </td>
+
+        </tr>
+      </table>
     </div>
     <div class="col-lg-6">
-</div>
+    </div>
+  </div>
 </div>
