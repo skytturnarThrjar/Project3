@@ -16,7 +16,8 @@ angular.module("project3App")
   $scope.onAddProduct = function onAddProduct() {
       var p = {};
       ProductDlg.show(p).then(function(product) {
-        AppResource.addSellerProduct(parseInt($scope.Sellerid), product).success(function(product) {
+        AppResource.addSellerProduct(parseInt($scope.Sellerid), product).success(function(addedProduct) {
+          $scope.sellersProducts.push(addedProduct);
           centrisNotify.success('product.Messages.SaveSucceeded');
         }).error(function() {
           centrisNotify.error('product.Messages.SaveFailed');
