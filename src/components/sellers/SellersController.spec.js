@@ -38,6 +38,7 @@ describe("SellersController should be unit tested here", function() {
 				});
 
 				it("Possible to add seller", function() {
+					var beforeLength = scope.sellers.length;
 					var sellerObj = {
 						SellerName: 'vala',
 						SellerCategory: 'blómkál',
@@ -45,7 +46,8 @@ describe("SellersController should be unit tested here", function() {
 					};
 					mockFactory.seller = sellerObj;
 					scope.onAddSeller();
-					expect(resource.addSeller).toHaveBeenCalled();
+					var afterLength = scope.sellers.length;
+					expect(beforeLength).not.toEqual(afterLength);
 				});
 
 				it("Not possible to add seller", function() {
