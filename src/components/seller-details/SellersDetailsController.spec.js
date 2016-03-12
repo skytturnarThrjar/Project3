@@ -28,7 +28,8 @@ describe("SellersDetailsController should be unit tested here", function() {
       SellersDetailsController = $controller('SellersDetailsController', {
         $scope: scope,
         AppResource: resource,
-        $routeParams: {id: '1'}
+        $routeParams: {id: '1'},
+        ProductDlg: mockFactory
       });
     }));
 
@@ -36,33 +37,33 @@ describe("SellersDetailsController should be unit tested here", function() {
       expect(scope.sellersDetails).toBeDefined();
     });
 
-		// it("Possible to add product", function() {
-    //   var productObj = {
-    //     productName: "vala",
-    //     price: 1002,
-    //     quantitySold: 20,
-    //     quantityInStock: 400,
-    //     imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
-    //   };
-		// 	mockFactory.product = productObj;
-    //   console.log(mockFactory.product);
-		// 	scope.onAddProduct();
-    //   expect(resource.addedProduct).toBe(true);
-		// });
-    //
-		// it("Not possible to add seller", function() {
-		// 	resource.successAddSellerProduct = false;
-    //   var productObj = {
-    //     productName: "vala",
-    //     price: 1002,
-    //     quantitySold: 20,
-    //     quantityInStock: 400,
-    //     imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
-    //   };
-		// 	mockFactory.mockSeller = productObj;
-		// 	scope.onAddProduct();
-		// 	expect(resource.addedProduct).toBe(false);
-		// });
+		it("Possible to add product", function() {
+      var productObj = {
+        productName: "vala",
+        price: 1002,
+        quantitySold: 20,
+        quantityInStock: 400,
+        imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
+      };
+			mockFactory.product = productObj;
+      console.log(mockFactory.product);
+			scope.onAddProduct();
+      expect(resource.addedProduct).toBe(true);
+		});
+
+		it("Not possible to add seller", function() {
+			resource.successAddSellerProduct = false;
+      var productObj = {
+        productName: "vala",
+        price: 1002,
+        quantitySold: 20,
+        quantityInStock: 400,
+        imagePath: "http://innnes.is/wp-content/uploads/2015/08/graenmeti_innnes-3.jpg"
+      };
+			mockFactory.mockSeller = productObj;
+			scope.onAddProduct();
+			expect(resource.addedProduct).toBe(false);
+		});
   });
 
   describe("SellersDetailsController - getSeller doesn't works", function() {
