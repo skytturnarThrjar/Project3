@@ -30,7 +30,9 @@ angular.module("project3App")
 
     AppResource.getSellerProducts(parseInt($scope.sellerID)).success(function(products) {
       $scope.sellersProducts = products;
+      if(products.length === 0) {
         $scope.noproducts = "Seller has no products";
+      }
       //store.set('sellersProducts', $scope.sellersProducts);
     }).error(function() {
       centrisNotify.error('products.Messages.LoadFailed');
