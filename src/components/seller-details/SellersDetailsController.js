@@ -36,24 +36,32 @@ angular.module("project3App")
     });
 
 
-  }).directive('topProducts', function() {
-    return {
-      restrict: 'E',
-      templateUrl: '/src/components/top-products-tab/top-products.html'
-    };
-  }).directive('productsTab', function() {
-    return {
-      restrict: 'E',
-      templateUrl: '/src/components/products-tab/index.html'
-    };
-  }).directive('products', function() {
-    return {
-      restrict: 'E',
-      templateUrl: '/src/components/product/Product.html'
-    };
-  }).directive('product', function() {
-    return {
-      restrict: 'E',
-      templateUrl: '/src/components/product/Product.html'
-    };
-  });
+}).directive('topProducts', function() {
+return {
+	restrict: 'E',
+	templateUrl: '/src/components/top-products-tab/top-products.html'
+};
+}).directive('productsTab', function() {
+return {
+	restrict: 'E',
+	templateUrl: '/src/components/products-tab/index.html'
+};
+}).directive('products', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/src/components/product/Product.html'
+  };
+}).directive('product', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/src/components/product/Product.html'
+  };
+}).directive("headerdir", function () {
+  return {
+    restrict: "E",
+    templateUrl: "components/header/header.html",
+    link: function(scope, element) {
+      element.addClass('header');
+    }
+  };
+});
