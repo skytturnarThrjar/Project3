@@ -193,10 +193,12 @@ function AppResource() {
 		},
 
 		updateProduct: function(id, product) {
+			console.log("updateProduct", product);
 			mockResource.updatedProduct = false;
 			if (mockResource.successUpdateSellerProduct) {
 				var current = _.find(mockProducts, function(o){ return o.id === id;});
 				if (current !== null) {
+					console.log(product.name);
 					current.name = product.name;
 					current.price = product.price;
 					current.quantitySold = product.quantitySold;
