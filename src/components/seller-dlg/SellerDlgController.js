@@ -10,7 +10,9 @@ function SellerDlgController($scope, seller, AppResource) {
   };
 
   $scope.onCancel = function onCancel() {
-    AppResource.updateSeller(parseInt(s.id), s).success(function (s) {});
+    $scope.seller.name = s.name;
+    $scope.seller.category = s.category;
+    $scope.seller.imagePath = s.imagePath;
     $scope.$dismiss();
   };
 });
