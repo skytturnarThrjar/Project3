@@ -40,7 +40,7 @@ function AppResource() {
 		createSeller(1, "Hannyrðaþjónusta Hannesar", "Fatnaður", "http://i.imgur.com/OYVpe2W.jpg?fb"),
 		createSeller(2, "Smíðaverkstæði Sigríðar", "Skartgripir", "https://i.imgur.com/ywaPivVh.jpg"),
 		createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://i.imgur.com/IuL474x.jpg"),
-		createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "https://upload.wikimedia.org/wikipedia/commons/6/67/Potter_at_work,_Jaura,_India.jpg"),
+		createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "http://manilareviews.com/wp-content/uploads/2012/04/DSC_0197.jpg"),
 		createSeller(5, "Húsgagnabúð völu", "Mublur", "http://www.neo-furniture.com/skin/frontend/base/theme677/images/neo/02.jpg?1457481609860")
 
 	];
@@ -55,11 +55,11 @@ function AppResource() {
 		createProduct(1,  7, "Jakki",            4499,  23, 14, "http://www.newmanmayahandicraft.com.np/wp-content/uploads/2015/10/woolen-jacket-with-multicolored-design.jpg"),
 		createProduct(1,  8, "Peysa",            5899, 122,  1, "https://upload.wikimedia.org/wikipedia/commons/7/75/Selburose-sweater.jpg"),
 		createProduct(1,  9, "Lambhúshetta",     2499, 322,  4, "https://upload.wikimedia.org/wikipedia/commons/9/9a/Balaclava_3_hole_black.jpg"),
-		createProduct(1, 10, "Buxur",            4299,  73,  5, ""),
-		createProduct(1, 11, "Grifflur",         1299,  98,  9, ""),
+		createProduct(1, 10, "Buxur",            4299,  73,  5, "http://2.bp.blogspot.com/-qV-a1j54fJs/UYTq4dMWN_I/AAAAAAAAAdQ/zfyCqP391qQ/s1600/images+(1).jpg"),
+		createProduct(1, 11, "Grifflur",         1299,  98,  9, "http://www.hokuspokus.is/images/BA572_grifllur_stuttar_graenar.jpg"),
 		createProduct(1, 12, "Teppi",             499, 819, 98, "https://pixabay.com/static/uploads/photo/2015/11/07/14/40/fabric-1031932_960_720.jpg"),
 		createProduct(1, 13, "Sokkar",            499, 991, 23, "https://upload.wikimedia.org/wikipedia/commons/4/42/HandKnittedWhiteLaceSock.jpg"),
-		createProduct(1, 14, "Bindi",             899,  25, 22, ""),
+		createProduct(1, 14, "Bindi",             899,  25, 22, "https://www.aha.is/media/catalog/product/cache/1/image/4137793dd7223b9146d9dcb53ced065c/l/i/light_blue.jpg"),
 		createProduct(1, 15, "Slaufa",            499, 552, 54, "https://pixabay.com/static/uploads/photo/2015/04/20/21/39/bow-tie-732289_960_720.jpg"),
 		createProduct(1, 16, "Hnéháir sokkar",   2499,  93, 42, "https://upload.wikimedia.org/wikipedia/commons/c/cf/Argyle_(PSF).png"),
 		createProduct(1, 17, "Barnatrefill",      999,  39, 11, "https://upload.wikimedia.org/wikipedia/commons/a/a4/Well-clothed_baby.jpg"),
@@ -67,9 +67,11 @@ function AppResource() {
 		createProduct(1, 19, "Hvítir vettlingar", 499, 241,  0, "https://pixabay.com/static/uploads/photo/2014/05/05/22/15/gloves-338614_960_720.jpg"),
 		createProduct(1, 20, "Úlnliðshlífar",    1499,  34,  0, "https://pixabay.com/static/uploads/photo/2015/11/07/17/20/hands-1032312_960_720.jpg"),
 		createProduct(3, 21, "Kókoskúlur",        499, 100, 5000, "https://upload.wikimedia.org/wikipedia/commons/2/2c/Chokladbollar.jpg"),
-		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, ""),
+		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, "http://s7.orientaltrading.com/is/image/OrientalTrading/CANDYBUFFET-lollipops-012916?$1X1main$$NOWA$&"),
 		createProduct(5, 22, "Sófi",       499, 200, 4900, "http://i68.tinypic.com/14b72gh.png"),
-		createProduct(5, 11, "Stóll",         1299,  98,  9, "http://www.thayray.com/7/2015/11/architecture-designs-furniture-gt-design-couch.jpg"),
+		createProduct(5, 23, "Stóll",         1299,  98,  9, "http://i63.tinypic.com/jsoui1.png"),
+		createProduct(5, 24, "Hægindar stóll",         1299,  98,  9, "http://i64.tinypic.com/rlb2mf.png"),
+
 
 	];
 	// Note: sellers 2 and 4 don't have any products - yet!
