@@ -3,7 +3,8 @@
     "OK":                        "OK",
     "Cancel":                    "Cancel",
 		"EN":												 "English",
-		"ISL": 											 "Icelandic",							
+		"ISL": 											 "Icelandic",
+		"Back": 										 "Go back",						
 		"Messages" : {
 			"LoadingMessage":				 "Loading..."
 		}

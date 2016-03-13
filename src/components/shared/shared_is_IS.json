@@ -3,7 +3,8 @@
     "OK":                        "Í lagi",
     "Cancel":                    "Hætta við",
 		"EN":												 "Enska",
-		"ISL": 											 "Íslenska",	
+		"ISL": 											 "Íslenska",
+		"Back": 										 "Til baka",			
 		"Messages" : {
 			"LoadingMessage":				 "Nær í gögn..."
 		}
