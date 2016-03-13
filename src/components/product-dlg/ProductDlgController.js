@@ -10,4 +10,7 @@ function ProductDlgController($scope, product) {
   $scope.onCancel = function onCancel() {
     $scope.$dismiss();
   };
+
+  $scope.required = true;
+
 });

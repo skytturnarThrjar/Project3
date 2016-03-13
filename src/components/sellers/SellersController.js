@@ -10,7 +10,7 @@ function SellersController($scope, $uibModal, AppResource, $location, centrisNot
 		$scope.isLoading = false;
 		centrisNotify.error('sellers.Messages.LoadFailed');
 	});
-	
+
 	//$scope.sellerInfo = {};
 
 	$scope.onAddSeller = function onAddSeller() {

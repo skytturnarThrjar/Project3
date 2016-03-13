@@ -10,7 +10,19 @@
           </div>
           <div class="form-group">
             <label translate="products.Price">:</label>
-            <input type="text" class="form-control" ng-model="product.price" />
+            <input type="number" step="0.01" min="0" placeholder="Please Input a price" class="form-control" ng-model="product.price"/>
+            <input type="number"
+       ng-model="string"
+       [name="string"]
+       [min="string"]
+       [max="string"]
+       [required="string"]
+       [ng-required="string"]
+       [ng-minlength="number"]
+       [ng-maxlength="number"]
+       [pattern="string"]
+       [ng-pattern="string"]
+       [ng-change="string"]>
           </div>
           <div class="form-group">
             <label translate="products.QuantityInStock">:</label>
