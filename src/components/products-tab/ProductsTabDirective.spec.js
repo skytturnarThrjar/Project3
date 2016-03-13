@@ -1,6 +1,6 @@
 "use strict";
 
-describe("ProductTabDirective", function() {
+describe("ProductsTabDirective", function() {
   var template = "<productsTab></productsTab>";
   var scope;
   var compile;
@@ -15,15 +15,11 @@ describe("ProductTabDirective", function() {
 
     $httpBackend.expectGET("lang_en.json").respond("");
     $httpBackend.expectGET("src/components/products-tab/index.html").respond("<div></div>");
-    backend.flush();
   }));
-  // describe("when editing", function() {
-  //   it("should be of length 1", function() {
-  //     element = compile(template)(scope);
-  //     var isolatedScope = element.isolateScope();
-  //     console.log(element);
-  //
-  //     expect(element.hasClass('productsTab')).toBe(true);
-  //   });
-  // });
+  describe("when editing", function() {
+    it("directive should include html", function() {
+      element = compile(template)(scope);
+      expect(element[0].outerHTML).toEqual('<productstab class="ng-scope"></productstab>');
+    });
+  });
 });

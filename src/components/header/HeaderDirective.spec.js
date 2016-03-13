@@ -20,11 +20,8 @@ describe("HeaderDirective", function() {
   describe("when editing", function() {
     it("should add the class header", function() {
       element = compile(template)(scope);
-
       backend.flush();
-
       var isolatedScope = element.isolateScope();
-
       expect(element.hasClass('header')).toBe(true);
     });
   });

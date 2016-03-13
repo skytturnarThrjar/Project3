@@ -17,13 +17,9 @@ describe("TopProductTabDirective", function() {
     $httpBackend.expectGET("src/components/top-products-tab/top-products.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    //ÞETTA ER EKKI AÐ TESTA KÓÐANN!
-    it("should be of length 1", function() {
+    it("directive should include html", function() {
       element = compile(template)(scope);
-      var isolatedScope = element.isolateScope();
-      console.log(element);
-
-      expect(element.length).toBe(1);
+      expect(element[0].outerHTML).toEqual('<topproducts class="ng-scope"></topproducts>');
     });
   });
 });
