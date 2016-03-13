@@ -14,8 +14,6 @@ function SellersController($scope, $uibModal, AppResource, $location, centrisNot
 		centrisNotify.error('sellers.Messages.LoadFailed');
 	});
 
-	//$scope.sellerInfo = {};
-
 	$scope.onAddSeller = function onAddSeller() {
 			var s = {};
 			SellerDlg.show(s).then(function(seller) {

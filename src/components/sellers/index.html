@@ -15,15 +15,15 @@
     <button type="button" class="btn btn-primary btn-lg" ng-click="onAddSeller()" translate="sellers.Add"></button>
     <div class="col-lg-6">
       <table>
-        <tr>
-          <th class="nameOfSellers">
+        <tr table-sort="name">
+          <th data-columnName="name" class="nameOfSellers">
             <a ng-click="sortBy = 'name'; ascending = !ascending" class="tableHeader">
               <span translate="sellers.NameOfSellers"/>
               <span ng-show="ascending == false && sortBy == 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
               <span ng-show="ascending == true && sortBy == 'name'" class="glyphicon glyphicon-triangle-top"></span>
             </a>
             </th>
-          <th class="category">
+          <th data-columnName="category" class="category">
             <a ng-click="sortBy = 'category'; ascending = !ascending" class="tableHeader">
               <span translate="sellers.Category" />
               <span ng-show="ascending == false && sortBy == 'category'" class="glyphicon glyphicon-triangle-bottom"></span>
@@ -31,7 +31,7 @@
             </a></th>
         </tr>
 
-        <tr ng-repeat="seller in sellers | orderBy:sortBy:ascending">
+        <tr ng-repeat="seller in sellers | orderBy:predicate:ascending">
           <td class="nameOfSellers"> <a ng-href="#/{{seller.id}}"> {{seller.name}}  </a></td>
           <td class="category">{{seller.category}}</td>
           <td>
