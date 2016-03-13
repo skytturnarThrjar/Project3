@@ -8,6 +8,7 @@
       </div>
       <div class="details-category">
         <p>{{sellersDetails.category}}</p>
+
       </div>
     </div>
   </div>
@@ -19,12 +20,15 @@
     </div>
   </div>
 
-  <div class="row tabs products">
+
+  <div class="row padding products">
     <uib-tabset active="active">
       <uib-tab index="0" heading="Products">
+        <div class="padding" >{{noproducts}}</div>
         <products-tab></products-tab>
       </uib-tab>
       <uib-tab index="1" heading="Top 10 products">
+        <div class="padding" >{{noproducts}}</div>
         <top-products></top-products>
       </uib-tab>
     </uib-tabset>
