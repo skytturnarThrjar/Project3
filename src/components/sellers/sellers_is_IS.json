@@ -7,6 +7,7 @@
 		"NameOfSellers":						 "Nafn Seljanda",
 		"Add":											 "Bæta við seljanda",
 		"Edit":											 "Breyta",
+		"NameOfWebpage":						 "WEPO Verslun",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"LoadDetailsFailed":		 "Ekki tókst að sækja upplýsingar um seljanda",
