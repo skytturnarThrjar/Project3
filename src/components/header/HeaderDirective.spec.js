@@ -17,6 +17,7 @@ describe("HeaderDirective", function() {
     backend.flush();
     $httpBackend.expectGET("components/header/header.html").respond("<div></div>");
   }));
+
   describe("when editing", function() {
     it("should add the class header", function() {
       element = compile(template)(scope);

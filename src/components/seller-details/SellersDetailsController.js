@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App")
-  .controller("SellersDetailsController", function SellersDetailsController($scope, AppResource, $routeParams, store, centrisNotify, ProductDlg) {
+  .controller("SellersDetailsController", function SellersDetailsController($scope, AppResource, $routeParams, store, centrisNotify, ProductDlg, $translate) {
     $scope.noproducts = "";
     $scope.Sellerid = $routeParams.id;
 

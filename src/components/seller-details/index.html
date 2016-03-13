@@ -8,7 +8,6 @@
       </div>
       <div class="details-category">
         <p>{{sellersDetails.category}}</p>
-
       </div>
     </div>
   </div>
@@ -20,15 +19,12 @@
     </div>
   </div>
 
-
-  <div class="row padding products">
+  <div class="row tabs products">
     <uib-tabset active="active">
-      <uib-tab index="0" heading="Products">
-        <div class="padding" >{{noproducts}}</div>
+      <uib-tab index="0" heading="{{ 'details.Products' | translate }}">
         <products-tab></products-tab>
       </uib-tab>
-      <uib-tab index="1" heading="Top 10 products">
-        <div class="padding" >{{noproducts}}</div>
+      <uib-tab index="1" heading="{{ 'details.Top10Products' | translate }}">
         <top-products></top-products>
       </uib-tab>
     </uib-tabset>
