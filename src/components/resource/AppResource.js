@@ -176,6 +176,8 @@ function AppResource() {
 			if (mockResource.successAddSellerProduct) {
 				var newID = mockProducts.length + 1;
 				product.id = newID;
+				product.quantitySold = 0;
+				product.quantityInStock = 0;
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
 				if (seller) {
 					success = true;
