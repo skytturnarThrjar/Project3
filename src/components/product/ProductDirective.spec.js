@@ -1,7 +1,7 @@
 "use strict";
 
-describe("HeaderDirective", function() {
-  var template = "<headerdir></headerdir>";
+describe("ProductDirective", function() {
+  var template = "<product></product>";
   var scope;
   var compile;
   var element;
@@ -14,18 +14,18 @@ describe("HeaderDirective", function() {
     backend = $httpBackend;
 
     $httpBackend.expectGET("lang_en.json").respond("");
-    backend.flush();
-    $httpBackend.expectGET("components/header/header.html").respond("<div></div>");
+    //backend.flush();
+    $httpBackend.expectGET("/src/components/product/Product.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    it("should add the class header", function() {
+    it("should add the class product", function() {
       element = compile(template)(scope);
 
       backend.flush();
 
       var isolatedScope = element.isolateScope();
 
-      expect(element.hasClass('header')).toBe(true);
+      expect(element.hasClass('product')).toBe(true);
     });
   });
 });
