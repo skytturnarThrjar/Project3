@@ -4,6 +4,7 @@ angular.module("project3App").controller("SellerDlgController",
 function SellerDlgController($scope, seller, AppResource) {
   $scope.seller = seller;
   var s = _.clone($scope.seller);
+
   $scope.onOk = function onOK(seller) {
     $scope.$close($scope.seller);
   };
