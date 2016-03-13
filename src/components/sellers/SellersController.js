@@ -26,7 +26,8 @@ angular.module("project3App").controller("SellersController",
     };
 
     $scope.onEditSeller = function onEditSeller(s) {
-      SellerDlg.show(s).then(function(seller) {
+      var currSeller = s;
+      SellerDlg.show(currSeller).then(function(seller) {
         AppResource.updateSeller(parseInt(seller.id), seller).success(function(seller) {
           centrisNotify.success('sellers.Messages.EditSucceeded');
         }).error(function() {
