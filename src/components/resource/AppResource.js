@@ -106,6 +106,7 @@ function AppResource() {
 		successUpdateSellerProduct: true,
 		updatedSeller:							false,
 		updatedProduct: 						false,
+		addedSeller:								false,
 		addedProduct:								false,
 
 		// Below are the real functions this object should support.
@@ -118,10 +119,12 @@ function AppResource() {
 		},
 
 		addSeller: function addSeller(seller) {
+			mockResource.addedSeller = false;
 			if (mockResource.successAddSeller) {
 				var newID = mockSellers.length + 1;
 				seller.id = newID;
 				mockSellers.push(seller);
+				mockResource.addedSeller = true;
 			}
 			return mockHttpPromise(mockResource.successAddSeller, seller);
 		},

@@ -40,7 +40,6 @@ describe("ProductController should be unit tested here", function() {
       };
       mockFactory.product = productObj;
       scope.onEditProduct(productObj);
-      //expect(resource.updateSeller).toHaveBeenCalled();
       expect(resource.updatedProduct).toBe(true);
     });
 
