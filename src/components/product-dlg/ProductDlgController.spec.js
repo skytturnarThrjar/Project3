@@ -8,8 +8,8 @@ describe("ProductDlgController should be unit tested here", function() {
 
   beforeEach(inject(function($rootScope, $controller) {
     scope = $rootScope.$new();
-    scope.$close = function(){};
-    scope.$dismiss = function(){};
+    scope.$close = function() {};
+    scope.$dismiss = function() {};
     productObj = {
       productName: 'vala',
       productPrice: 'blómkál',

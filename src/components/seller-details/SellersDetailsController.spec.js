@@ -27,7 +27,9 @@ describe("SellersDetailsController should be unit tested here", function() {
       SellersDetailsController = $controller('SellersDetailsController', {
         $scope: scope,
         AppResource: resource,
-        $routeParams: {id: '1'},
+        $routeParams: {
+          id: '1'
+        },
         ProductDlg: mockFactory
       });
     }));
@@ -97,7 +99,9 @@ describe("SellersDetailsController should be unit tested here", function() {
       SellersDetailsController = $controller('SellersDetailsController', {
         $scope: scope,
         AppResource: resource,
-        $routeParams: {id: '1'},
+        $routeParams: {
+          id: '1'
+        },
         ProductDlg: mockFactory
       });
     }));

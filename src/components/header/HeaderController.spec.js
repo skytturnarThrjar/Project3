@@ -6,13 +6,11 @@ describe("ProductsTabController should be unit tested here", function() {
   var scope;
   var resource;
   var mockTranslateISL = {
-		use: function(lang) {
-		}
-	};
+    use: function(lang) {}
+  };
 
   var mockTranslateEN = {
-    use: function(lang) {
-    }
+    use: function(lang) {}
   };
 
   describe("Icelandic", function() {

@@ -1,8 +1,6 @@
 <div ng-controller="ProductController" class="col-lg-3  col-md-3 col-sm-6 col-xs-12 product">
-        <img class="ProductImage" src= "{{product.imagePath}}">
-        <h4>{{product.name  | uppercase}}</h2>
-
-        <h4>{{product.price}} ISK</h4>
-        <!-- <h3>{{product.quantityInStock}}</h3> -->
-        <button type="button" class="btn btn-primary btn-sm" ng-click="onEditProduct(product)" translate="products.Edit"></button>
+  <img class="ProductImage" src="{{product.imagePath}}">
+  <h4>{{product.name  | uppercase}}</h2>
+  <h4>{{product.price}} ISK</h4>
+  <button type="button" class="btn btn-primary btn-sm" ng-click="onEditProduct(product)" translate="products.Edit"></button>
 </div>

@@ -7,8 +7,7 @@ describe("HeaderDirective", function() {
   var element;
   var backend;
   var mockTranslateEN = {
-    use: function(lang) {
-    }
+    use: function(lang) {}
   };
   beforeEach(module("project3App"));
   beforeEach(inject(function($rootScope, $compile, $httpBackend) {
@@ -25,27 +24,27 @@ describe("HeaderDirective", function() {
     $httpBackend.expectGET("components/header/header.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    // it("should add the class header", function() {
-    //   // Compile the HTML fragment into our directive object:
-    //   element = compile(template)(scope);
-    //   // Since the directive uses a templateUrl, we must flush
-    //   // the HTTP pipeline to ensure the template is properly loaded:
-    //   backend.flush();
-    //
-    //   backend.when('GET', 'lang_en.json').passThrough();
-    //
-    //   //backend.flush();
-    //   // Now we can start examining the scope of our directive.
-    //   // Since it uses isolated scope, any changes it makes
-    //   // to the scope object only affect its own scope,
-    //   // which we must access explicitly:
-    //   var isolatedScope = element.isolateScope();
-    //   // Use regular expect() methods to check on the contents of
-    //   // the directive scope, i.e. by using "isolatedScope" instead
-    //   // of "scope".
-    //   //expect(scope.whatever).not.toBeDefined();
-    //   expect(element.hasClass('header')).toBe(true);
-    // });
+    it("should add the class header", function() {
+      // Compile the HTML fragment into our directive object:
+      element = compile(template)(scope);
+      // Since the directive uses a templateUrl, we must flush
+      // the HTTP pipeline to ensure the template is properly loaded:
+      backend.flush();
+
+      backend.when('GET', 'lang_en.json').passThrough();
+
+      //backend.flush();
+      // Now we can start examining the scope of our directive.
+      // Since it uses isolated scope, any changes it makes
+      // to the scope object only affect its own scope,
+      // which we must access explicitly:
+      var isolatedScope = element.isolateScope();
+      // Use regular expect() methods to check on the contents of
+      // the directive scope, i.e. by using "isolatedScope" instead
+      // of "scope".
+      //expect(scope.whatever).not.toBeDefined();
+      expect(element.hasClass('header')).toBe(true);
+    });
   });
   // Etc., more describe() blocks, and more it() blocks as well...
 });

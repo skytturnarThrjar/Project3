@@ -5,7 +5,6 @@ function SellerDlgController($scope, seller, AppResource) {
   $scope.seller = seller;
   var s = _.clone($scope.seller);
   $scope.onOk = function onOK(seller) {
-    console.log("SellerDigCo" , $scope.seller);
     $scope.$close($scope.seller);
   };
 

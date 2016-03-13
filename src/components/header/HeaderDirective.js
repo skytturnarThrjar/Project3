@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("project3App").directive("headerdir", function () {
+angular.module("project3App").directive("headerdir", function() {
   return {
     restrict: "E",
     templateUrl: "components/header/header.html",

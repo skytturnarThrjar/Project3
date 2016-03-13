@@ -4,11 +4,7 @@
     <loading-message></loading-message>
   </div>
 
-  <header class="intro">
-
-  </header>
-
-
+  <header class="intro"></header>
 
   <div class="row shopps">
     <h1 translate="sellers.Title"></h1>
@@ -18,17 +14,18 @@
         <tr table-sort="name">
           <th data-columnName="name" class="nameOfSellers">
             <a ng-click="sortBy = 'name'; ascending = !ascending" class="tableHeader">
-              <span translate="sellers.NameOfSellers"/>
+              <span translate="sellers.NameOfSellers" />
               <span ng-show="ascending == false && sortBy == 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
               <span ng-show="ascending == true && sortBy == 'name'" class="glyphicon glyphicon-triangle-top"></span>
             </a>
-            </th>
+          </th>
           <th data-columnName="category" class="category">
             <a ng-click="sortBy = 'category'; ascending = !ascending" class="tableHeader">
               <span translate="sellers.Category" />
               <span ng-show="ascending == false && sortBy == 'category'" class="glyphicon glyphicon-triangle-bottom"></span>
               <span ng-show="ascending == true && sortBy == 'category'" class="glyphicon glyphicon-triangle-top"></span>
-            </a></th>
+            </a>
+          </th>
         </tr>
 
         <tr ng-repeat="seller in sellers | orderBy:predicate:ascending">

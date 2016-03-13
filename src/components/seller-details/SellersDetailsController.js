@@ -1,59 +1,59 @@
 "use strict";
 
 angular.module("project3App")
-.controller("SellersDetailsController",function SellersDetailsController($scope, AppResource, $routeParams, store, centrisNotify, ProductDlg) {
+  .controller("SellersDetailsController", function SellersDetailsController($scope, AppResource, $routeParams, store, centrisNotify, ProductDlg) {
 
-  $scope.Sellerid = $routeParams.id ;
+    $scope.Sellerid = $routeParams.id;
 
-  AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function(sellers){
-    $scope.sellersDetails = sellers;
-  }).error(function() {
-    centrisNotify.error('sellers.Messages.LoadDetailsFailed');
-  });
+    AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function(sellers) {
+      $scope.sellersDetails = sellers;
+    }).error(function() {
+      centrisNotify.error('sellers.Messages.LoadDetailsFailed');
+    });
 
-  //$scope.sellersProducts = store.get('sellersProducts');
+    //$scope.sellersProducts = store.get('sellersProducts');
 
-  $scope.onAddProduct = function onAddProduct() {
+    $scope.onAddProduct = function onAddProduct() {
       var p = {};
       ProductDlg.show(p).then(function(product) {
         AppResource.addSellerProduct(parseInt($scope.Sellerid), product).success(function(addedProduct) {
           $scope.sellersProducts.push(addedProduct);
-          centrisNotify.success('product.Messages.SaveSucceeded');
+          centrisNotify.success('products.Messages.SaveSucceeded');
         }).error(function() {
-          centrisNotify.error('product.Messages.SaveFailed');
+          centrisNotify.error('products.Messages.SaveFailed');
+        });
       });
+    };
+
+
+    $scope.sellerID = $routeParams.id;
+
+    AppResource.getSellerProducts(parseInt($scope.sellerID)).success(function(products) {
+      $scope.sellersProducts = products;
+      //store.set('sellersProducts', $scope.sellersProducts);
+    }).error(function() {
+      centrisNotify.error('products.Messages.LoadFailed');
     });
-  };
 
 
-  $scope.sellerID = $routeParams.id;
-
-  AppResource.getSellerProducts(parseInt($scope.sellerID)).success(function(products) {
-    $scope.sellersProducts = products;
-    //store.set('sellersProducts', $scope.sellersProducts);
-  }).error(function() {
-    centrisNotify.error('products.Messages.LoadFailed');
+  }).directive('topProducts', function() {
+    return {
+      restrict: 'E',
+      templateUrl: '/src/components/top-products-tab/top-products.html'
+    };
+  }).directive('productsTab', function() {
+    return {
+      restrict: 'E',
+      templateUrl: '/src/components/products-tab/index.html'
+    };
+  }).directive('products', function() {
+    return {
+      restrict: 'E',
+      templateUrl: '/src/components/product/Product.html'
+    };
+  }).directive('product', function() {
+    return {
+      restrict: 'E',
+      templateUrl: '/src/components/product/Product.html'
+    };
   });
-
-
-}).directive('topProducts', function() {
-return {
-	restrict: 'E',
-	templateUrl: '/src/components/top-products-tab/top-products.html'
-};
-}).directive('productsTab', function() {
-return {
-	restrict: 'E',
-	templateUrl: '/src/components/products-tab/index.html'
-};
-}).directive('products', function() {
-  return {
-    restrict: 'E',
-    templateUrl: '/src/components/product/Product.html'
-  };
-}).directive('product', function() {
-  return {
-    restrict: 'E',
-    templateUrl: '/src/components/product/Product.html'
-  };
-});
