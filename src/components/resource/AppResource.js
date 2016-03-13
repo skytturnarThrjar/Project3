@@ -68,8 +68,8 @@ function AppResource() {
 		createProduct(1, 20, "Úlnliðshlífar",    1499,  34,  0, "https://pixabay.com/static/uploads/photo/2015/11/07/17/20/hands-1032312_960_720.jpg"),
 		createProduct(3, 21, "Kókoskúlur",        499, 100, 5000, "https://upload.wikimedia.org/wikipedia/commons/2/2c/Chokladbollar.jpg"),
 		createProduct(3, 22, "Brjóstsykur",       499, 200, 4900, ""),
-		createProduct(5, 22, "Stóll",       499, 200, 4900, "http://nuppulabs.com/wp-content/uploads/2013/05/original-130103_hai_008_edited_white-background_9094.jpg"),
-		createProduct(5, 11, "Sófi",         1299,  98,  9, "http://www.thayray.com/7/2015/11/architecture-designs-furniture-gt-design-couch.jpg"),
+		createProduct(5, 22, "Sófi",       499, 200, 4900, "http://i68.tinypic.com/14b72gh.png"),
+		createProduct(5, 11, "Stóll",         1299,  98,  9, "http://www.thayray.com/7/2015/11/architecture-designs-furniture-gt-design-couch.jpg"),
 
 	];
 	// Note: sellers 2 and 4 don't have any products - yet!
