@@ -36,6 +36,7 @@ angular.module("project3App")
     });
 
 
+//DIRECTIVES
 }).directive('topProducts', function() {
 return {
 	restrict: 'E',

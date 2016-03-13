@@ -3,16 +3,16 @@
     <h3 class="modal-title" translate="products.Title"></h3>
   </div>
   <div class="modal-body">
-    <form ng-app="myApp" name="myForm" novalidate>
+    <form ng-app="myApp" name="myForm" ng-submit="onOk(product)" novalidate>
 
-      <p> <span translate="products.Name" />: <span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid || myForm.name.$untouched">
+      <p> <span translate="products.Name" />: <span style="color:red" ng-show="!myForm.name.$pristine && myForm.name.$invalid">
               <span ng-show="myForm.name.$error.required">*</span>
         </span>
         <br>
         <input type="text" class="form-control" name="namze" ng-model="product.name" required>
       </p>
 
-      <p> <span translate="products.Price" />:<span style="color:red" ng-show="myForm.price.$dirty && myForm.price.$invalid || myForm.price.$untouched">
+      <p> <span translate="products.Price" />:<span style="color:red" ng-show="!myForm.price.$pristine && myForm.price.$invalid">
           <span ng-show="myForm.price.$error.required">*</span>
         </span>
         <br>
@@ -20,7 +20,7 @@
       </p>
 
       <p> <span translate="products.ImagePath" />:
-        <span style="color:red" ng-show="myForm.imagePath.$dirty && myForm.imagePath.$invalid || myForm.imagePath.$untouched">
+        <span style="color:red" ng-show="!myForm.imagePath.$pristine && myForm.imagePath.$invalid">
           <span ng-show="myForm.imagePath.$error.required">*</span>
         </span>
         <br>
@@ -28,7 +28,7 @@
       </p>
 
       <div class="modal-footer">
-        <input class="btn btn-primary" type="submit" ng-click="onOk(seller)" translate="shared.OK" ng-disabled="myForm.name.$dirty && myForm.name.$invalid ||  myForm.price.$dirty && myForm.price.$invalid ||  myForm.imagePath.$dirty && myForm.imagePath.$invalid || myForm.price.$untouched && myForm.name.$untouched  && myForm.imagePath.$untouched">
+        <input class="btn btn-primary" type="submit" translate="shared.OK" ng-disabled="myForm.$invalid || (myForm.name.$pristine && myForm.price.$pristine && myForm.imagePath.$pristine)">
         <button class="btn btn-warning" type="button" ng-click="onCancel()" translate="shared.Cancel"></button>
       </div>
 

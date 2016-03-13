@@ -133,6 +133,7 @@ function AppResource() {
 			mockResource.updatedSeller = false;
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
+				console.log(current);
 				if (current !== null) {
 					current.name      = seller.name;
 					current.category  = seller.category;
@@ -193,17 +194,15 @@ function AppResource() {
 		},
 
 		updateProduct: function(id, product) {
-			console.log("updateProduct", product);
 			mockResource.updatedProduct = false;
 			if (mockResource.successUpdateSellerProduct) {
-				var current = _.find(mockProducts, function(o){ return o.id === id;});
+				var current = _.find(mockProducts, function(o){ return o.product.id === id;});
 				if (current !== null) {
-					console.log(product.name);
 					current.name = product.name;
 					current.price = product.price;
 					current.quantitySold = product.quantitySold;
 					current.quantityInStock = product.quantityInStock;
-					current.imagePath = product.path;
+					current.imagePath = product.imagePath;
 					mockResource.updatedProduct = true;
 				}
 			}

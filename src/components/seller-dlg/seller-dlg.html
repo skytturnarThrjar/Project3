@@ -3,9 +3,9 @@
     <h3 class="modal-title" translate="sellers.Add"></h3>
   </div>
   <div class="modal-body">
-    <form ng-app="myApp" name="myForm" novalidate>
+    <form ng-app="myApp" name="myForm" ng-submit="onOk(seller)" novalidate>
 
-      <p> <span translate="sellers.Name" />: <span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid || myForm.name.$untouched">
+      <p> <span translate="sellers.Name" />: <span style="color:red" ng-show="!myForm.name.$pristine && myForm.name.$invalid">
             <span ng-show="myForm.name.$error.required">*</span>
         </span>
         <br>
@@ -13,7 +13,7 @@
 
       </p>
 
-      <p> <span translate="sellers.Category" />:<span style="color:red" ng-show="myForm.name.$dirty && myForm.category.$invalid || myForm.category.$untouched">
+      <p> <span translate="sellers.Category" />:<span style="color:red" ng-show="!myForm.name.$pristine && myForm.category.$invalid">
         <span ng-show="myForm.category.$error.required">*</span>
         </span>
         <br>
@@ -21,7 +21,7 @@
       </p>
 
       <p> <span translate="sellers.ImagePath" />:
-        <span style="color:red" ng-show="myForm.imagePath.$dirty && myForm.imagePath.$invalid  || myForm.imagePath.$untouched">
+        <span style="color:red" ng-show="!myForm.imagePath.$pristine && myForm.imagePath.$invalid">
         <span ng-show="myForm.imagePath.$error.required">*</span>
         </span>
         <br>
@@ -29,7 +29,7 @@
       </p>
 
       <div class="modal-footer">
-        <input class="btn btn-primary" type="submit" ng-click="onOk(seller)" translate="shared.OK" ng-disabled="myForm.name.$dirty && myForm.name.$invalid ||  myForm.category.$dirty && myForm.category.$invalid||  myForm.category.$dirty && myForm.imagePath.$invalid || myForm.category.$untouched && myForm.name.$untouched  && myForm.imagePath.$untouched">
+        <input class="btn btn-primary" type="submit" translate="shared.OK" ng-disabled="myForm.$invalid">
         <button class="btn btn-warning" type="button" ng-click="onCancel()" translate="shared.Cancel"></button>
       </div>
 
