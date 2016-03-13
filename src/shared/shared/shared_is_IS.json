@@ -1,0 +1,11 @@
+{
+	"shared" : {
+    "OK":                        "Í lagi",
+    "Cancel":                    "Hætta við",
+		"EN":												 "Enska",
+		"ISL": 											 "Íslenska",	
+		"Messages" : {
+			"LoadingMessage":				 "Nær í gögn..."
+		}
+	}
+}
