@@ -14,20 +14,29 @@
     <h1 translate="sellers.Title"></h1>
     <button type="button" class="btn btn-primary btn-lg" ng-click="onAddSeller()" translate="sellers.Add"></button>
     <div class="col-lg-6">
-
       <table>
         <tr>
-          <th class="nameOfSellers"> <span translate="sellers.NameOfSellers" /></th>
-          <th class="category"> <span translate="sellers.Category" />
-          </th>
+          <th class="nameOfSellers">
+            <a ng-click="sortBy = 'name'; ascending = !ascending" class="tableHeader">
+              <span translate="sellers.NameOfSellers"/>
+              <span ng-show="ascending == false && sortBy == 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
+              <span ng-show="ascending == true && sortBy == 'name'" class="glyphicon glyphicon-triangle-top"></span>
+            </a>
+            </th>
+          <th class="category">
+            <a ng-click="sortBy = 'category'; ascending = !ascending" class="tableHeader">
+              <span translate="sellers.Category" />
+              <span ng-show="ascending == false && sortBy == 'category'" class="glyphicon glyphicon-triangle-bottom"></span>
+              <span ng-show="ascending == true && sortBy == 'category'" class="glyphicon glyphicon-triangle-top"></span>
+            </a></th>
         </tr>
-        <tr ng-repeat="seller in sellers | orderBy:predicate">
-          <td data-columnName="nameOfSellers" class="nameOfSellers"> <a ng-href="#/{{seller.id}}"> {{seller.name}}  </a></td>
-          <td data-columnName="Category" class="category">{{seller.category}}</td>
+
+        <tr ng-repeat="seller in sellers | orderBy:sortBy:ascending">
+          <td class="nameOfSellers"> <a ng-href="#/{{seller.id}}"> {{seller.name}}  </a></td>
+          <td class="category">{{seller.category}}</td>
           <td>
             <button type="button" class="btn btn-primary btn-xs" ng-click="onEditSeller(seller)" translate="sellers.Edit"></button>
           </td>
-
         </tr>
       </table>
     </div>
