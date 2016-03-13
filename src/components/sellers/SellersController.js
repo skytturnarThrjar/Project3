@@ -3,6 +3,9 @@
 angular.module("project3App").controller("SellersController",
 function SellersController($scope, $uibModal, AppResource, $location, centrisNotify, SellerDlg, $translate) {
 	$scope.isLoading = true;
+	$scope.sortBy = 'name';
+	$scope.ascending = false;
+
 	AppResource.getSellers().success(function (sellers){
 		$scope.sellers = sellers;
 		$scope.isLoading = false;
