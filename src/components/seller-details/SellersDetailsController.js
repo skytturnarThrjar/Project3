@@ -32,9 +32,7 @@ angular.module("project3App")
       $scope.sellersProducts = products;
       console.log(products);
       if(products.length === 0){
-        console.log("here");
         $scope.noproducts = "Seller has no products";
-        console.log("{{scope.noproducts}}" , $scope.noproducts);
       }
       //store.set('sellersProducts', $scope.sellersProducts);
     }).error(function() {

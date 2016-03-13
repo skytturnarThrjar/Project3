@@ -59,7 +59,7 @@ describe("SellersDetailsController should be unit tested here", function() {
       expect(resource.addedProduct).toBe(true);
     });
 
-    it("Not ossible to add product", function() {
+    it("Not possible to add product", function() {
       var productObj = {
         productName: "vala",
         price: 1002,
@@ -109,5 +109,26 @@ describe("SellersDetailsController should be unit tested here", function() {
     it("Not able to get seller products", function() {
       expect(scope.sellersProducts).toBeUndefined();
     });
+
+  });
+
+  describe("Success to get seller products", function() {
+    beforeEach(inject(function($rootScope, $controller, AppResource) {
+      scope = $rootScope.$new();
+      resource = AppResource;
+      SellersDetailsController = $controller('SellersDetailsController', {
+        $scope: scope,
+        AppResource: resource,
+        $routeParams: {
+          id: '2'
+        },
+        ProductDlg: mockFactory
+      });
+    }));
+    
+    it("Sellerhasnoproduct should not be defined", function() {
+      expect(scope.noproducts).toBeDefined();
+    });
+
   });
 });
