@@ -13,14 +13,21 @@ describe("ProductsTabController should be unit tested here", function() {
     use: function(lang) {}
   };
 
+  var mockLocation = {
+    path: function(p) {
+    }
+  };
+
   describe("Icelandic", function() {
-    beforeEach(inject(function($rootScope, $controller, AppResource) {
+    beforeEach(inject(function($rootScope, $controller, AppResource, $location) {
       scope = $rootScope.$new();
       resource = AppResource;
       spyOn(mockTranslateISL, 'use').and.callThrough();
+      spyOn(mockLocation, 'path');
       HeaderController = $controller('HeaderController', {
         $scope: scope,
         $translate: mockTranslateISL,
+        $location: mockLocation
       });
     }));
 
@@ -32,6 +39,11 @@ describe("ProductsTabController should be unit tested here", function() {
     it("scope.lang becomes is", function() {
       scope.changeLanguage("is");
       expect(scope.lang).toEqual("is");
+    });
+
+    it("Testing goBack function", function() {
+      scope.goBack();
+      expect(mockLocation.path).toHaveBeenCalledWith('/');
     });
   });
 

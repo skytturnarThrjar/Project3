@@ -1,7 +1,7 @@
 "use strict";
 
-describe("HeaderDirective", function() {
-  var template = "<headerdir></headerdir>";
+describe("TopProductTabDirective", function() {
+  var template = "<topProducts></topProducts>";
   var scope;
   var compile;
   var element;
@@ -14,18 +14,16 @@ describe("HeaderDirective", function() {
     backend = $httpBackend;
 
     $httpBackend.expectGET("lang_en.json").respond("");
-    backend.flush();
-    $httpBackend.expectGET("components/header/header.html").respond("<div></div>");
+    $httpBackend.expectGET("src/components/top-products-tab/top-products.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    it("should add the class header", function() {
+    //ÞETTA ER EKKI AÐ TESTA KÓÐANN!
+    it("should be of length 1", function() {
       element = compile(template)(scope);
-
-      backend.flush();
-
       var isolatedScope = element.isolateScope();
+      console.log(element);
 
-      expect(element.hasClass('header')).toBe(true);
+      expect(element.length).toBe(1);
     });
   });
 });
