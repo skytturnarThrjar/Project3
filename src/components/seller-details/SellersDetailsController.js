@@ -46,4 +46,14 @@ return {
 	restrict: 'E',
 	templateUrl: '/src/components/products-tab/index.html'
 };
+}).directive('products', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/src/components/product/Product.html'
+  };
+}).directive('product', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/src/components/product/Product.html'
+  };
 });
