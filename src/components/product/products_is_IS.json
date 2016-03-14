@@ -8,6 +8,7 @@
     "ImagePath":                 "Slóð á mynd",
 		"Add": 											 "Bæta við vöru",
 		"Edit":											 "Breyta vöru",
+		"NoProducts":    						 "Seljandi er ekki með neinar vörur",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",

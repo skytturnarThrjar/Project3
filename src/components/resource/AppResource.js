@@ -135,7 +135,6 @@ function AppResource() {
 			mockResource.updatedSeller = false;
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
-				console.log(current);
 				if (current !== null) {
 					current.name      = seller.name;
 					current.category  = seller.category;

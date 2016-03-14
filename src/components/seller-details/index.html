@@ -49,9 +49,11 @@
   <div class="row tabs products">
     <uib-tabset active="active">
       <uib-tab index="0" heading="{{ 'details.Products' | translate }}">
+        <uib-alert type="danger" ng-show="sellersProducts.length == 0">{{ 'products.NoProducts' | translate}}</uib-alert>
         <products-tab></products-tab>
       </uib-tab>
       <uib-tab index="1" heading="{{ 'details.Top10Products' | translate }}">
+        <uib-alert type="danger" ng-show="sellersProducts.length == 0">{{ 'products.NoProducts' | translate}}</uib-alert>
         <top-products></top-products>
       </uib-tab>
     </uib-tabset>
