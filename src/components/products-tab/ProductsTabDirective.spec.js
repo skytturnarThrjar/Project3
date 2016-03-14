@@ -14,12 +14,18 @@ describe("ProductsTabDirective", function() {
     backend = $httpBackend;
 
     $httpBackend.expectGET("lang_en.json").respond("");
-    $httpBackend.expectGET("/src/components/products-tab/index.html").respond("<div></div>");
+    //backend.flush();
+    $httpBackend.expectGET("src/components/products-tab/index.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    it("directive should include html", function() {
+    it("should include html", function() {
       element = compile(template)(scope);
-      expect(element[0].outerHTML).toContain('</productstab>');
+
+      //backend.flush();
+
+      var isolatedScope = element.isolateScope();
+      console.log(element[0]);
+      expect(element[0].outerHTML).toEqual('<productstab class="ng-scope"></productstab>');
     });
   });
 });

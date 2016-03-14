@@ -72,6 +72,16 @@ describe("SellersDetailsController should be unit tested here", function() {
       scope.onAddProduct();
       expect(resource.addedProduct).toBe(false);
     });
+
+    it("possible to set sortBy", function() {
+      scope.setSortBy("vuhu");
+      expect(scope.sortBy).toEqual("vuhu");
+    });
+
+    it("possible to set ascending", function() {
+      scope.setAscending(false);
+      expect(scope.ascending).toBe(false);
+    });
   });
 
   describe("Not success to get seller details", function() {
@@ -125,7 +135,7 @@ describe("SellersDetailsController should be unit tested here", function() {
         ProductDlg: mockFactory
       });
     }));
-    
+
     it("Sellerhasnoproduct should not be defined", function() {
       expect(scope.noproducts).toBeDefined();
     });

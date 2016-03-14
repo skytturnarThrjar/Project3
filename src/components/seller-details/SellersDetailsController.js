@@ -1,9 +1,11 @@
 "use strict";
 
 angular.module("project3App")
-  .controller("SellersDetailsController", function SellersDetailsController($scope, AppResource, $routeParams, store, centrisNotify, ProductDlg, $translate) {
+  .controller("SellersDetailsController", function SellersDetailsController($scope, AppResource, $routeParams, centrisNotify, ProductDlg, $translate) {
     $scope.noproducts = "";
     $scope.Sellerid = $routeParams.id;
+    $scope.sortBy = 'name';
+    $scope.ascending = false;
 
     AppResource.getSellerDetails(parseInt($scope.Sellerid)).success(function(sellers) {
       $scope.sellersDetails = sellers;
@@ -30,39 +32,15 @@ angular.module("project3App")
       if(products.length === 0) {
         $scope.noproducts = "Seller has no products";
       }
-      //store.set('sellersProducts', $scope.sellersProducts);
     }).error(function() {
       centrisNotify.error('products.Messages.LoadFailed');
     });
 
+    $scope.setSortBy = function(value) {
+      $scope.sortBy = value;
+    };
 
-//DIRECTIVES
-// }).directive('topProducts', function() {
-// return {
-// 	restrict: 'E',
-// 	templateUrl: '/src/components/top-products-tab/top-products.html'
-// };
-// }).directive('productsTab', function() {
-// return {
-// 	restrict: 'E',
-// 	templateUrl: '/src/components/products-tab/index.html'
-// };
-// }).directive('products', function() {
-//   return {
-//     restrict: 'E',
-//     templateUrl: '/src/components/product/Product.html'
-//   };
-// }).directive('product', function() {
-//   return {
-//     restrict: 'E',
-//     templateUrl: '/src/components/product/Product.html'
-//   };
-// }).directive("headerdir", function () {
-//   return {
-//     restrict: "E",
-//     templateUrl: "components/header/header.html",
-//     link: function(scope, element) {
-//       element.addClass('header');
-//     }
-//   };
+    $scope.setAscending = function(value) {
+      $scope.ascending = value;
+    };
 });

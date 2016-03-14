@@ -1,6 +1,6 @@
 <div class="col-lg-12">
   <div>
-    <div ng-repeat="product in sellersProducts ">
+    <div ng-repeat="product in sellersProducts | orderBy:sortBy:ascending">
       <product></product>
     </div>
   </div>

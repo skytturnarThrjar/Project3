@@ -1,10 +1,10 @@
 <div class="sellersDetails">
 
   <div class="details">
-    <img class="SellerImage" src="{{sellersDetails.imagePath }}">
+    <img class="SellerImage" src="{{sellersDetails.imagePath}}">
     <div class="row details-text">
       <div class="details-name">
-        <h2>{{sellersDetails.name }}  </h2>
+        <h2>{{sellersDetails.name}}</h2>
       </div>
       <div class="details-category">
         <p>{{sellersDetails.category}}</p>
@@ -16,6 +16,31 @@
   <div class="row">
     <div class="addButton">
       <button type="button" class="btn btn-primary btn-lg" ng-click="onAddProduct()" translate="products.Add"></button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="sortButtons">
+      <a ng-click="setSortBy('name'); setAscending(!ascending)" class="btn btn-primary btn-sm">
+        <span translate="products.Name" />
+        <span ng-show="ascending == false && sortBy == 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span ng-show="ascending == true && sortBy == 'name'" class="glyphicon glyphicon-triangle-top"></span>
+      </a>
+      <a ng-click="setSortBy('price'); setAscending(!ascending)" class="btn btn-primary btn-sm">
+        <span translate="products.Price" />
+        <span ng-show="ascending == false && sortBy == 'price'" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span ng-show="ascending == true && sortBy == 'price'" class="glyphicon glyphicon-triangle-top"></span>
+      </a>
+      <a ng-click="setSortBy('quantitySold'); setAscending(!ascending)" class="btn btn-primary btn-sm">
+        <span translate="products.QuantitySold" />
+        <span ng-show="ascending == false && sortBy == 'quantitySold'" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span ng-show="ascending == true && sortBy == 'quantitySold'" class="glyphicon glyphicon-triangle-top"></span>
+      </a>
+      <a ng-click="setSortBy('quantityInStock'); setAscending(!ascending)" class="btn btn-primary btn-sm">
+        <span translate="products.QuantityInStock" />
+        <span ng-show="ascending == false && sortBy == 'quantityInStock'" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span ng-show="ascending == true && sortBy == 'quantityInStock'" class="glyphicon glyphicon-triangle-top"></span>
+      </a>
     </div>
   </div>
 

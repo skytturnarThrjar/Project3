@@ -18,7 +18,7 @@ describe("ProductDirective", function() {
     $httpBackend.expectGET("/src/components/product/Product.html").respond("<div></div>");
   }));
   describe("when editing", function() {
-    it("should add the class product", function() {
+    it("should include html", function() {
       element = compile(template)(scope);
 
       backend.flush();
