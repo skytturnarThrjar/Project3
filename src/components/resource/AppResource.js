@@ -41,7 +41,7 @@ function AppResource() {
 		createSeller(2, "Smíðaverkstæði Sigríðar", "Skartgripir", "https://i.imgur.com/ywaPivVh.jpg"),
 		createSeller(3, "Sælgætisgerð Sjonna og Súsí", "Matvörur", "http://i.imgur.com/IuL474x.jpg"),
 		createSeller(4, "Leirkeraverkstæði Lomma", "Keramik", "http://manilareviews.com/wp-content/uploads/2012/04/DSC_0197.jpg"),
-		createSeller(5, "Húsgagnabúð völu", "Mublur", "http://www.neo-furniture.com/skin/frontend/base/theme677/images/neo/02.jpg?1457481609860")
+		createSeller(5, "Húsgagnabúð Völu", "Mublur", "http://www.neo-furniture.com/skin/frontend/base/theme677/images/neo/02.jpg?1457481609860")
 
 	];
 

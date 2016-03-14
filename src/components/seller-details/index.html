@@ -15,12 +15,14 @@
 
   <div class="row">
     <div class="addButton">
-      <button type="button" class="btn btn-primary btn-lg" ng-click="onAddProduct()" translate="products.Add"></button>
+      <button type="button" class="btn btn-primary btn-md" ng-click="onAddProduct()" translate="products.Add"></button>
     </div>
   </div>
 
   <div class="row">
     <div class="sortButtons">
+      Sort by :
+
       <a ng-click="setSortBy('name'); setAscending(!ascending)" class="btn btn-primary btn-sm">
         <span translate="products.Name" />
         <span ng-show="ascending == false && sortBy == 'name'" class="glyphicon glyphicon-triangle-bottom"></span>
