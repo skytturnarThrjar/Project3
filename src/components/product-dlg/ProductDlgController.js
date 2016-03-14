@@ -7,7 +7,7 @@ angular.module("project3App").controller("ProductDlgController",
     if($scope.addOrEdit === "add") {
       $scope.add = true;
     }
-    if($scope.addOrEDit === "edit") {
+    if($scope.addOrEdit === "edit") {
       $scope.add = false;
     }
     var p = _.clone($scope.product);

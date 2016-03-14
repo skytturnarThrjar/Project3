@@ -14,12 +14,12 @@ describe("ProductsTabDirective", function() {
     backend = $httpBackend;
 
     $httpBackend.expectGET("lang_en.json").respond("");
-    $httpBackend.expectGET("src/components/products-tab/index.html").respond("<div></div>");
+    $httpBackend.expectGET("/src/components/products-tab/index.html").respond("<div></div>");
   }));
   describe("when editing", function() {
     it("directive should include html", function() {
       element = compile(template)(scope);
-      expect(element[0].outerHTML).toEqual('<productstab class="ng-scope"></productstab>');
+      expect(element[0].outerHTML).toContain('</productstab>');
     });
   });
 });

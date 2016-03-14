@@ -8,7 +8,7 @@ function SellerDlgController($scope, data, AppResource) {
   if($scope.addOrEdit === "add") {
     $scope.add = true;
   }
-  if($scope.addOrEDit === "edit") {
+  if($scope.addOrEdit === "edit") {
     $scope.add = false;
   }
 
