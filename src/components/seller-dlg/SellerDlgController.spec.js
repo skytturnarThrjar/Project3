@@ -19,7 +19,7 @@ describe("SellerDlgController should be unit tested here", function() {
     spyOn(scope, '$dismiss').and.callThrough();
     SellerDlgController = $controller('SellerDlgController', {
       $scope: scope,
-      seller: sellerObj
+      data:['add', sellerObj]
     });
   }));
 
