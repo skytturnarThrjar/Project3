@@ -1,8 +1,15 @@
 "use strict";
 
 angular.module("project3App").controller("ProductDlgController",
-  function ProductDlgController($scope, product, AppResource, $routeParams, centrisNotify) {
-    $scope.product = product;
+  function ProductDlgController($scope, data, AppResource, $routeParams, centrisNotify) {
+    $scope.product = data[1];
+    $scope.addOrEdit = data[0];
+    if($scope.addOrEdit === "add") {
+      $scope.add = true;
+    }
+    if($scope.addOrEDit === "edit") {
+      $scope.add = false;
+    }
     var p = _.clone($scope.product);
     $scope.onOk = function onOK(product) {
       $scope.$close($scope.product);

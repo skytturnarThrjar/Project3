@@ -1,6 +1,7 @@
 <div>
   <div class="modal-header">
-    <h3 class="modal-title" translate="sellers.Add"></h3>
+    <h3 class="modal-title" ng-show="add" translate="sellers.Add"></h3>
+    <h3 class="modal-title" ng-show="!add" translate="sellers.EditTitle"></h3>
   </div>
   <div class="modal-body">
     <form ng-app="myApp" name="myForm" ng-submit="onOk(seller)" novalidate>
@@ -29,7 +30,7 @@
       </p>
 
       <div class="modal-footer">
-        <input class="btn btn-primary" type="submit" translate="shared.OK" ng-disabled="myForm.$invalid">
+        <button class="btn btn-primary" type="submit" ng-disabled="myForm.$invalid" translate="shared.OK"></button>
         <button class="btn btn-warning" type="button" ng-click="onCancel()" translate="shared.Cancel"></button>
       </div>
 

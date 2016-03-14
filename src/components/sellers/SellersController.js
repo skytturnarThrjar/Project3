@@ -16,7 +16,7 @@ angular.module("project3App").controller("SellersController",
 
     $scope.onAddSeller = function onAddSeller() {
       var s = {};
-      SellerDlg.show(s).then(function(seller) {
+      SellerDlg.show("add", s).then(function(seller) {
         AppResource.addSeller(seller).success(function(seller) {
           centrisNotify.success('sellers.Messages.SaveSucceeded');
         }).error(function() {
@@ -27,7 +27,7 @@ angular.module("project3App").controller("SellersController",
 
     $scope.onEditSeller = function onEditSeller(s) {
       var currSeller = s;
-      SellerDlg.show(currSeller).then(function(seller) {
+      SellerDlg.show("edit", currSeller).then(function(seller) {
         AppResource.updateSeller(parseInt(seller.id), seller).success(function(seller) {
           centrisNotify.success('sellers.Messages.EditSucceeded');
         }).error(function() {

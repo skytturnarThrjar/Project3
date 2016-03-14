@@ -7,6 +7,7 @@
 		"NameOfSellers":						 "Name of sellers",
 		"Add":											 "Add seller",
 		"Edit":											 "Edit",
+		"EditTitle":								 "Edit seller",
 		"NameOfWebpage":						 "WEPO Boutique",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",

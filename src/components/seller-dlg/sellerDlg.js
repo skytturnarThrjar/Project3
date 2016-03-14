@@ -3,12 +3,14 @@
 angular.module("project3App").factory("SellerDlg",
   function SellerDlg($uibModal) {
     return {
-      show: function(seller) {
+      show: function(addOrEdit, seller) {
         var modalInstance = $uibModal.open({
           templateUrl: "components/seller-dlg/seller-dlg.html",
           controller: "SellerDlgController",
           resolve: {
-            seller: seller
+            data: function() {
+              return [addOrEdit, seller];
+            }
           }
         });
 

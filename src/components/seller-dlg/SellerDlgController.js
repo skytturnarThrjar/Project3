@@ -1,8 +1,17 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-function SellerDlgController($scope, seller, AppResource) {
-  $scope.seller = seller;
+function SellerDlgController($scope, data, AppResource) {
+
+  $scope.seller = data[1];
+  $scope.addOrEdit = data[0];
+  if($scope.addOrEdit === "add") {
+    $scope.add = true;
+  }
+  if($scope.addOrEDit === "edit") {
+    $scope.add = false;
+  }
+
   var s = _.clone($scope.seller);
 
   $scope.onOk = function onOK(seller) {

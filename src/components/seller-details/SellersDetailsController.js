@@ -11,11 +11,9 @@ angular.module("project3App")
       centrisNotify.error('sellers.Messages.LoadDetailsFailed');
     });
 
-    //$scope.sellersProducts = store.get('sellersProducts');
-
     $scope.onAddProduct = function onAddProduct() {
       var p = {};
-      ProductDlg.show(p).then(function(product) {
+      ProductDlg.show("add", p).then(function(product) {
         AppResource.addSellerProduct(parseInt($scope.Sellerid), product).success(function(addedProduct) {
           $scope.sellersProducts.push(addedProduct);
           centrisNotify.success('products.Messages.SaveSucceeded');
@@ -24,7 +22,6 @@ angular.module("project3App")
         });
       });
     };
-
 
     $scope.sellerID = $routeParams.id;
 
